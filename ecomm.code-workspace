@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "backend-ecomm"
+		},
+		{
+			"path": "backend-www"
+		},
+		{
+			"path": "frontend"
+		}
+	],
+	"settings": {}
+}
