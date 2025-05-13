@@ -1,3 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Oswald:wght@200..700&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
+
+@theme {
+	--font-base: 'Montserrat', sans-serif;
+	--font-montserrat: 'Montserrat', sans-serif;
+	--font-crimson: 'Crimson Text', serif;
+	--font-oswald: 'Oswald', sans-serif;
+	--font-nunito: 'Nunito Sans', sans-serif;
+	--color-text: #1e1e1e;
+	--color-green-default: #59815b;
+}
+
+@layer {
+	html {
+		font-size: 16px;
+		font-optical-sizing: auto;
+	}
+	p {
+		@apply font-base;
+	}
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+		@apply font-oswald;
+		@apply font-extrabold;
+		color: var(--color-text);
+	}
+	h1 {
+		font-size: 50px;
+	}
+	h2 {
+		font-size: 42px;
+	}
+	h3 {
+		font-size: 37px;
+	}
+	h4 {
+		font-size: 29px;
+	}
+}
