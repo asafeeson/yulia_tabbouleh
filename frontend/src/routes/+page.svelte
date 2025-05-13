@@ -6,13 +6,12 @@
 	const { data }: { data: PageData } = $props();
 </script>
 
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://svelte.dev/docs/kit">svelte.dev/docs/kit</a> to read the documentation</p>
+<h1>Это главная страница сайта</h1>
 <br />
 <MenuItem></MenuItem>
 <br />
 
 <div>
   <Link href="/blog">Go to BLOG</Link>
-  <Link href="/shop" className="bg-emerald-500 px-4 py-2 hover:bg-emerald-400">Go to SHOP</Link>
+  <Link href="/shop" className="bg-emerald-500 hover:bg-emerald-400 px-10 py-2.5">Go to SHOP</Link>
 </div>
