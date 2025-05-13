@@ -18,7 +18,7 @@
 
 	let {
 		href,
-		className = 'bg-green-default px-10 py-2.5',
+		className = 'bg-green-default px-10 py-2.5 text-white hover:bg-green-800',
 		ariaLabel,
 		text,
 		title,
