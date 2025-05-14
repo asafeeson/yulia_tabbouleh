@@ -10,7 +10,9 @@
 		title?: string;
 		loading?: 'lazy' | 'eager';
 		caption?: string;
-		className?: string;
+		classFigure?: string;
+		classImage?: string;
+		classFigcaption?: string;
 		width?: number | string;
 		height?: number | string;
 		decoding?: 'sync' | 'async' | undefined;
@@ -25,7 +27,9 @@
 		title,
 		loading = 'lazy',
 		caption,
-		className,
+		classFigure,
+		classImage,
+		classFigcaption,
 		width,
 		height,
 		decoding = 'async',
@@ -33,7 +37,7 @@
 	}: Props = $props();
 </script>
 
-<figure itemscope itemtype="https://schema.org/ImageObject" class={className}>
+<figure itemscope itemtype="https://schema.org/ImageObject" class={classFigure}>
 	<img
 		{src}
 		{alt}
@@ -47,9 +51,10 @@
 		aria-describedby={caption ? 'image-caption' : undefined}
 		itemprop="image"
 		{decoding}
+		class={classImage}
 	/>
 	{#if caption}
-		<figcaption id="image-caption" itemprop="caption">{caption}</figcaption>
+		<figcaption id="image-caption" itemprop="caption" class={classFigcaption}>{caption}</figcaption>
 	{/if}
 
 	{#if metaData}
