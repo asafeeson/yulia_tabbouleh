@@ -18,7 +18,7 @@
 
 	let {
 		href,
-		className = 'bg-green-default px-10 py-2.5 text-white hover:bg-green-800',
+		className = 'bg-green-default text-white hover:bg-green-800',
 		ariaLabel,
 		text,
 		title,
@@ -39,9 +39,11 @@
 		rel={isExternal ? 'noopener noreferrer' : rel}
 		aria-label={ariaLabel || text}
 		{itemprop}
-		class={className}
+		class={className + " " + "px-10 py-2.5 transition-all"}
 	>
-		{@render children()}
+		{#if children}
+			{@render children()}
+		{/if}
 	</a>
 	{#if metaData}
 		{#each metaData as meta}

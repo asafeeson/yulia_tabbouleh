@@ -29,7 +29,7 @@
 		{/if}
 		<Link href={linkUrl}>Каталог</Link>
 	</div>
-	<div class="-z-1 absolute inset-0 bg-gradient-to-r from-amber-500 to-[transparent_50%]"></div>
+	<div class="-z-1 absolute inset-0 bg-gradient-to-r from-amber-700 to-[transparent_50%]"></div>
 	<Image
 		src={backgroundImageSrc}
 		classImage="absolute right-0 top-1/2 -translate-y-1/2 object-cover h-full w-auto -z-1"

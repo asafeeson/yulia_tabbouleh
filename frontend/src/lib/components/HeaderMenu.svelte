@@ -1,18 +1,12 @@
 <script lang="ts">
-import type { Snippet } from 'svelte';
+	import type { Snippet } from 'svelte';
 
-let { children }:{ children:Snippet } = $props();
-
+	let { children }: { children: Snippet } = $props();
 </script>
 
-<nav>
-    
-</nav>
-
-<div>
-  {@render children()}
-</div>
+<header>
+	<nav></nav>
+</header>
 
 <style>
-
 </style>
