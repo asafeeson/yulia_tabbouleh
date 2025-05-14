@@ -4,6 +4,6 @@
 	let { children } = $props();
 </script>
 
-<div class="max-w-[1556]">
+<div class="">
 	{@render children()}
 </div>
