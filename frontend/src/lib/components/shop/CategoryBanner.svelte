@@ -20,7 +20,7 @@
 	}: Props = $props();
 </script>
 
-<div class="relative h-auto w-full overflow-clip">
+<div class="relative h-auto min-h-80 w-full overflow-clip">
 	<div class="w-3/4 space-y-6 p-10">
 		<h3>{title}</h3>
 		<p>{subtitle}</p>
