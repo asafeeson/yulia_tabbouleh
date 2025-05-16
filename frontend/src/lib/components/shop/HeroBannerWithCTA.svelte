@@ -12,7 +12,7 @@
 	{#if children}
 		{@render children()}
 	{/if}
-	<Image src="https://picsum.photos/800/1000" classImage="object-cover absolute bottom-0 h-full w-full -z-1"></Image>
+	<Image src="https://picsum.photos/800/1000" classImage="object-cover absolute inset-0 h-full w-full -z-1"></Image>
 </div>
 
 <style>
