@@ -51,9 +51,11 @@
 			</ul>
 		</nav>
 		<!-- logotype -->
-		<figure class="md:flex-1/3 flex items-center justify-start md:justify-center">
-			<Logo className="h-10 w-auto"></Logo>
-		</figure>
+		<a href="/" class="md:flex-1/3 flex items-center justify-start md:justify-center" >
+			<figure class="">
+				<Logo className="h-10 w-auto"></Logo>
+			</figure>
+		</a>
 		<!-- login & basket -->
 		<div class="text-asphalt md:flex-1/3 hidden items-center justify-end gap-2 md:flex md:gap-4">
 			<a href="/" class="group relative flex aspect-square h-10 w-10 items-center justify-center">

@@ -14,7 +14,7 @@
 </script>
 
 <Header></Header>
-<main class="lg:mb-24 lg:space-y-24 mb-12 space-y-12">
+<main class="mb-12 space-y-12 lg:mb-24 lg:space-y-24">
 	<HeroSection backgroundImageSrc="/hero_famous_lebanes.webp"></HeroSection>
 	<CategoriesSection></CategoriesSection>
 	<Section
@@ -57,12 +57,12 @@
 	<Section contentFlexClass="flex lg:flex-row flex-col items-stretch mx-auto gap-6">
 		<HeroBannerWithCta extraClass="lg:flex-1/3 relative flex flex-col h-[300px] lg:h-auto ">
 			<div class="flex-grow"></div>
-			<div class="flex flex-col gap-6 p-6">
+			<div class="flex flex-col gap-6 px-6 pb-12">
 				<h4 class="text-white">Важный баннер о чем-то классном</h4>
 				<Link href="/">Каталог</Link>
 			</div>
 		</HeroBannerWithCta>
-		<ul class="lg:flex-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+		<ul class="lg:flex-2/3 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
 			<li>
 				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
 				></ProductMiniCard>

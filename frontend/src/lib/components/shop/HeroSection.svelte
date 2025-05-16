@@ -15,7 +15,7 @@
 </script>
 
 <Section
-	sectionHeight="h-[80dvh]"
+	sectionHeight="h-[90dvh]"
 	sectionClass="relative"
 	sectionBackgound="bg-gradient-to-r from-green-dark via-green-default via-30% to-white to-80%"
 	contentFlexClass="flex flex-col mx-auto"

@@ -1,32 +1,67 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import Logo from '../SVG/Logo.svelte';
 
+	const menuData = {
+		menuOne: [
+			{ name: 'Футболки', url: '/' },
+			{ name: 'Шопперы', url: '/' },
+			{ name: 'Стикеры', url: '/' }
+		],
+		menuTwo: [
+			{ name: 'Отзывы', url: '/' },
+			{ name: 'Оплата и доставка', url: '/' },
+			{ name: 'Контакты', url: '/' }
+		],
+		menuThree: [
+			{ name: 'Политика конфиденциальности', url: '/' },
+			{ name: 'Условия использования', url: '/' }
+		]
+	};
 </script>
 
-<footer class="bg-asphalt text-light-gray min-h-[30dvh] w-full">
-	<div class="mx-auto max-w-[1216px] space-y-6 px-6 py-10 lg:px-0">
-		<div class="flex items-start justify-between">
-			<div class="flex-1/3 flex items-start justify-start">
+<footer class="bg-asphalt text-light-gray flex min-h-[30dvh] w-full">
+	<div
+		class="mx-auto flex max-w-[1216px] flex-grow flex-col justify-between space-y-6 px-6 pb-4 pt-10 lg:px-0"
+	>
+		<div class="flex items-start justify-between px-6 lg:px-0">
+			<div class="flex-1/4 flex flex-col items-start justify-start gap-2">
 				<figure class="flex items-center justify-start">
 					<Logo className="h-10 w-auto" textColor="white"></Logo>
 				</figure>
+				<p>© Юля Таббуле, 2025</p>
 			</div>
-			<div class="flex-1/3 flex justify-between">
+			<div class="flex-3/4 flex justify-around">
 				<nav>
 					<ul class="space-y-2">
-						<li><a href="/" itemprop="url" class="hover:text-white">Футболки</a></li>
-						<li><a href="/" itemprop="url" class="hover:text-white">Шопперы</a></li>
-						<li><a href="/" itemprop="url" class="hover:text-white">Стикеры</a></li>
+						{#each menuData.menuOne as menu}
+							<li><a href={menu.url} itemprop="url" class="hover:text-white">{menu.name}</a></li>
+						{/each}
+					</ul>
+				</nav>
+				<nav>
+					<ul class="space-y-2">
+						{#each menuData.menuTwo as menu}
+							<li><a href={menu.url} itemprop="url" class="hover:text-white">{menu.name}</a></li>
+						{/each}
+					</ul>
+				</nav>
+				<nav>
+					<ul class="space-y-2">
+						{#each menuData.menuThree as menu}
+							<li><a href={menu.url} itemprop="url" class="hover:text-white">{menu.name}</a></li>
+						{/each}
 					</ul>
 				</nav>
 			</div>
-			<div class="flex-1/3 flex justify-between"></div>
 		</div>
-		<hr class="text-wolf-gray" />
-		Сделано &nbsp;<a href="https://asafeeson.dev" target="_blank" rel="noopener noreferrer"
-			>asafeeson.dev</a
-		>
+		<div>
+			<hr class="text-wolf-gray mb-2" />
+			<p class="text-center text-sm">
+				Сделано фулл-стек разработчиком&nbsp;<a href="https://asafeeson.dev" target="_blank" rel="noopener noreferrer" class="font-bold"
+					>asafeeson.dev</a
+				>
+			</p>
+		</div>
 	</div>
 </footer>
 
