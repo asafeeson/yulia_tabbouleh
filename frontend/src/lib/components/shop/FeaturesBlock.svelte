@@ -9,9 +9,9 @@
 	let { icon, title, text }: Props = $props();
 </script>
 
-<div class="flex flex-col gap-4">
-	<WiSunrise></WiSunrise>
-    <h5>{title}</h5>
+<article class="flex flex-col gap-4">
+	<WiSunrise aria-hidden="true" focusable="false" role="image"></WiSunrise>
+    <h4>{title}</h4>
     <p>{text}</p>
-</div>
+</article>
 

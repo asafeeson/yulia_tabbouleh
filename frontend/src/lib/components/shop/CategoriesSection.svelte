@@ -6,7 +6,7 @@
 	let { children }: { children?: Snippet } = $props();
 </script>
 
-<Section contentClass="gap-6">
-	<CategoryBanner backgroundImageSrc="https://picsum.photos/400/201"></CategoryBanner>
-	<CategoryBanner backgroundImageSrc="https://picsum.photos/400/200"></CategoryBanner>
+<Section contentClass="gap-6" contentFlexClass="flex flex-col md:flex-row mx-auto">
+	<CategoryBanner backgroundImageSrc="https://picsum.photos/200/200" title="Категория товаров типа футболки"></CategoryBanner>
+	<CategoryBanner backgroundImageSrc="https://picsum.photos/200/200" title="Категория товаров типа шопперы"></CategoryBanner>
 </Section>

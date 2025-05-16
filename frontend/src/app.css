@@ -11,6 +11,11 @@
 	--font-nunito: 'Nunito Sans', sans-serif;
 	--color-text: #1e1e1e;
 	--color-green-default: #59815b;
+	--color-green-dark: #3C553A;
+	--color-light-gray: #B9B9B9;
+	--color-wolf-gray: #878787;
+	--color-asphalt: #242625;
+	--color-wet-asphalt: #1E1E1E;
 }
 
 @layer {
@@ -29,7 +34,6 @@
 	h6 {
 		@apply font-oswald;
 		@apply font-extrabold;
-		color: var(--color-text);
 	}
 	h1 {
 		font-size: 50px;
@@ -46,6 +50,14 @@
 	h4 {
 		font-size: 29px;
 		line-height: 32px;
+	}
+	h5 {
+		font-size: 22px;
+		line-height: 26px;
+	}
+	h6 {
+		font-size: 18px;
+		line-height: 22px;
 	}
 }
 /* Название категории товаров */

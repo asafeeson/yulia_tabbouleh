@@ -12,13 +12,13 @@
 		rel?: string;
 		target?: '_balnk' | '_self' | '_parent' | '_top';
 		isExternal?: boolean;
+		isSkeleton?: boolean;
 		metaData?: MetaDataLink[];
 		children: Snippet;
 	}
 
 	let {
 		href,
-		className = 'bg-green-default text-white hover:bg-green-800',
 		ariaLabel,
 		text,
 		title,
@@ -26,9 +26,14 @@
 		target = '_self',
 		rel,
 		isExternal = false,
+		isSkeleton = false,
 		metaData,
 		children
 	}: Props = $props();
+
+	let classBaseButton = 'px-10 py-2.5 transition-all';
+	let classBold = 'relative text-white bg-green-default overflow-hidden group ' + classBaseButton,
+		classSkeleton = 'relative border text-white overflow-hidden group ' + classBaseButton;
 </script>
 
 <span itemscope itemtype="https://schema.org/WebPage">
@@ -39,11 +44,16 @@
 		rel={isExternal ? 'noopener noreferrer' : rel}
 		aria-label={ariaLabel || text}
 		{itemprop}
-		class={className + " " + "px-10 py-2.5 transition-all"}
+		class={isSkeleton ? classSkeleton : classBold}
 	>
-		{#if children}
-			{@render children()}
-		{/if}
+		<span class="relative z-1">
+			{#if children}
+				{@render children()}
+			{/if}
+		</span>
+		<span
+			class="absolute inset-0 z-0 origin-left scale-x-0 transform bg-gradient-to-r from-green-dark to-transparent transition-transform duration-500 group-hover:scale-x-100"
+		></span>
 	</a>
 	{#if metaData}
 		{#each metaData as meta}

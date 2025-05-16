@@ -16,7 +16,7 @@
 	let {
 		children,
 		contentWidth = 'max-w-[1216px]',
-		contentHeight = 'h-auto',
+		contentHeight = '',
 		sectionWidth = 'w-full',
 		sectionHeight = 'h-auto',
 		sectionClass = '',
@@ -27,7 +27,8 @@
 </script>
 
 <section
-	class="w-full overflow-clip md:justify-start {sectionWidth} {sectionHeight} {sectionClass} {sectionBackgound}"
+	class="w-full overflow-clip md:justify-start {sectionWidth ?? sectionWidth} {sectionHeight ??
+		sectionHeight} {sectionClass ?? sectionClass} {sectionBackgound ?? sectionBackgound}"
 	id="section-content-wrapper"
 >
 	<div
