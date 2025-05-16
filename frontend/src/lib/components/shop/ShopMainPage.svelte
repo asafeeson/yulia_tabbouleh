@@ -14,26 +14,9 @@
 </script>
 
 <Header></Header>
-<main class="space-y-6">
-	<HeroSection backgroundImageSrc="https://picsum.photos/1000/400"></HeroSection>
+<main class="lg:mb-24 lg:space-y-24 mb-12 space-y-12">
+	<HeroSection backgroundImageSrc="/hero_famous_lebanes.webp"></HeroSection>
 	<CategoriesSection></CategoriesSection>
-	<Section contentFlexClass="flex lg:flex-row flex-col items-stretch mx-auto gap-6">
-		<HeroBannerWithCta extraClass="lg:flex-1/3 relative flex flex-col">
-			<div class="flex-grow"></div>
-			<div class="flex flex-col gap-4 p-4 lg:p-6">
-				<h4 class="text-white">Важный баннер о чем-то классном</h4>
-				<Link href="/">Каталог</Link>
-			</div>
-		</HeroBannerWithCta>
-		<ul class="lg:flex-2/3 flex flex-wrap items-start justify-between gap-6">
-			<li><ProductMiniCard title="Название продукта" price="10.000 руб"></ProductMiniCard></li>
-			<li><ProductMiniCard title="Название продукта" price="10.000 руб"></ProductMiniCard></li>
-			<li><ProductMiniCard title="Название продукта" price="10.000 руб"></ProductMiniCard></li>
-			<li><ProductMiniCard title="Название продукта" price="10.000 руб"></ProductMiniCard></li>
-			<li><ProductMiniCard title="Название продукта" price="10.000 руб"></ProductMiniCard></li>
-			<li><ProductMiniCard title="Название продукта" price="10.000 руб"></ProductMiniCard></li>
-		</ul>
-	</Section>
 	<Section
 		sectionBackgound="bg-linear-to-tl from-green-dark to-green-default to-80%"
 		sectionHeight="h-dvh"
@@ -68,6 +51,41 @@
 					title="Заголовок"
 					text="Это длинный или не очень длинный, может быть даже короткий текст"
 				></FeaturesBlock>
+			</li>
+		</ul>
+	</Section>
+	<Section contentFlexClass="flex lg:flex-row flex-col items-stretch mx-auto gap-6">
+		<HeroBannerWithCta extraClass="lg:flex-1/3 relative flex flex-col h-[300px] lg:h-auto ">
+			<div class="flex-grow"></div>
+			<div class="flex flex-col gap-6 p-6">
+				<h4 class="text-white">Важный баннер о чем-то классном</h4>
+				<Link href="/">Каталог</Link>
+			</div>
+		</HeroBannerWithCta>
+		<ul class="lg:flex-2/3 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+			<li>
+				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
+				></ProductMiniCard>
+			</li>
+			<li>
+				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
+				></ProductMiniCard>
+			</li>
+			<li>
+				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
+				></ProductMiniCard>
+			</li>
+			<li>
+				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
+				></ProductMiniCard>
+			</li>
+			<li>
+				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
+				></ProductMiniCard>
+			</li>
+			<li>
+				<ProductMiniCard image="/shirt_01.png" title="Название продукта" price="10.000 руб"
+				></ProductMiniCard>
 			</li>
 		</ul>
 	</Section>

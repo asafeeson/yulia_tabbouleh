@@ -8,7 +8,7 @@
 	let { children, extraClass }: Props = $props();
 </script>
 
-<div class="md:w-[472px] relative {extraClass}">
+<div class="lg:w-[472px] w-full relative {extraClass}">
 	{#if children}
 		{@render children()}
 	{/if}

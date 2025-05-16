@@ -17,11 +17,11 @@
 <Section
 	sectionHeight="h-[80dvh]"
 	sectionClass="relative"
-	sectionBackgound="bg-green-default"
+	sectionBackgound="bg-gradient-to-r from-green-dark via-green-default via-30% to-white to-80%"
 	contentFlexClass="flex flex-col mx-auto"
 	contentHeight="h-full"
 >
-	<div class="z-1 relative flex w-[50%] flex-grow flex-col justify-center gap-6 text-white">
+	<div class="z-1 relative flex md:w-[50%] flex-grow flex-col justify-center gap-6 text-white px-6 lg:px-0">
 		<h1>Восток ближе, чем кажется</h1>
 		<p class="mb-6">
 			Теперь у меня есть мой маленький Ливан, мой собственный Ближний Восток. Это мир, который
@@ -29,7 +29,7 @@
 			можно делиться не только словами, но и вещами, наполненными духом восточных базаров и тёплым
 			солнцем.
 		</p>
-		<Link href="/" isSkeleton={true}>Перейти в каталог</Link>
+		<Link href="/" isSkeleton={true}>Смотреть коллекцию</Link>
 	</div>
 	{#if children}
 		{@render children()}

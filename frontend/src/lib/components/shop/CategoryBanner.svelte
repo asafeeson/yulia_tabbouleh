@@ -21,7 +21,7 @@
 <div class="relative flex min-h-80 w-full flex-col overflow-clip">
 	<!-- card content -->
 	<div class="flex w-3/4 flex-grow flex-col justify-between gap-6 p-10">
-		<div class="space-y-6 text-white">
+		<div class="space-y-6 text-white w-2/3">
 			<h3>{title}</h3>
 			{#if subtitle}
 				<p>{subtitle}</p>
@@ -34,7 +34,7 @@
 	<!-- background image -->
 	<Image
 		src={backgroundImageSrc}
-		classImage="absolute right-0 top-1/2 -translate-y-1/2 object-cover h-full -z-1"
+		classImage="absolute right-4 top-0 object-cover h-full -z-1 py-6 drop-shadow-xl"
 	/>
 </div>
 
