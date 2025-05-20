@@ -25,14 +25,16 @@
 	>
 		<div class="flex flex-wrap items-center justify-between px-6 md:items-start lg:px-0">
 			<div
-				class="md:flex-1/4 mb-2 flex flex-col items-center w-full justify-start gap-2 lg:mb-0 lg:items-start"
+				class="md:flex-1/4 mb-2 flex w-full flex-col items-center justify-start gap-2 lg:mb-0 lg:items-start"
 			>
 				<figure class="flex items-center justify-start">
 					<Logo className="h-10 w-auto" textColor="white"></Logo>
 				</figure>
 				<p>© Юля Таббуле, 2025</p>
 			</div>
-			<div class="lg:flex-3/4 flex items-center justify-center md:justify-around w-full flex-col md:flex-row md:space-y-0 space-y-2">
+			<div
+				class="lg:flex-3/4 flex w-full flex-col items-center justify-center space-y-2 md:flex-row md:justify-around md:space-y-0"
+			>
 				<nav class="w-full">
 					<ul class="space-y-2 text-center">
 						{#each menuData.menuOne as menu}
