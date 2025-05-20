@@ -15,7 +15,7 @@
 
 <Header></Header>
 <main class="mb-12 space-y-12 lg:mb-24 lg:space-y-24">
-	<HeroSection backgroundImageSrc="/hero_famous_lebanes.webp"></HeroSection>
+	<HeroSection backgroundImageSrc="/hero_famous_lebanes.webp" urlButton="/shop/catalog"></HeroSection>
 	<CategoriesSection></CategoriesSection>
 	<Section
 		sectionBackgound="bg-linear-to-tl from-green-dark to-green-default to-80%"

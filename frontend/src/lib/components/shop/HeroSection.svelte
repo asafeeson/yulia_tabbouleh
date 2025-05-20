@@ -9,9 +9,10 @@
 		backgroundImageSrc?: string;
 		width?: string;
 		height?: string;
+		urlButton?: string;
 	}
 
-	let { children, backgroundImageSrc }: Props = $props();
+	let { children, backgroundImageSrc, urlButton }: Props = $props();
 </script>
 
 <Section
@@ -29,7 +30,7 @@
 			можно делиться не только словами, но и вещами, наполненными духом восточных базаров и тёплым
 			солнцем.
 		</p>
-		<Link href="/" isSkeleton={true}>Смотреть коллекцию</Link>
+		<Link href={urlButton} isSkeleton={true}>Смотреть коллекцию</Link>
 	</div>
 	{#if children}
 		{@render children()}
