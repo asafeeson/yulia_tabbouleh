@@ -18,6 +18,9 @@ export default defineConfig({
 			autoInstall: true
 		})
 	],
+	ssr: {
+		noExternal: ['@medusajs/js-sdk']
+	},
 	test: {
 		workspace: [
 			{
