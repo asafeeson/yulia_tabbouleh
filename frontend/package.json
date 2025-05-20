@@ -52,8 +52,8 @@
 	},
 	"dependencies": {
 		"@inlang/paraglide-js": "^2.0.0",
-		"@medusajs/js-sdk": "^2.7.1",
-		"@medusajs/types": "^2.7.1"
+		"@medusajs/js-sdk": "^2.8.2",
+		"@medusajs/types": "^2.8.2"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [

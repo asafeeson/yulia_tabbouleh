@@ -12,11 +12,11 @@ importers:
         specifier: ^2.0.0
         version: 2.0.12
       '@medusajs/js-sdk':
-        specifier: ^2.7.1
-        version: 2.7.1(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
+        specifier: ^2.8.2
+        version: 2.8.2(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
       '@medusajs/types':
-        specifier: ^2.7.1
-        version: 2.7.1(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
+        specifier: ^2.8.2
+        version: 2.8.2(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
     devDependencies:
       '@eslint/compat':
         specifier: ^1.2.5
@@ -451,12 +451,12 @@ packages:
   '@lix-js/server-protocol-schema@0.1.1':
     resolution: {integrity: sha512-jBeALB6prAbtr5q4vTuxnRZZv1M2rKe8iNqRQhFJ4Tv7150unEa0vKyz0hs8Gl3fUGsWaNJBh3J8++fpbrpRBQ==}
 
-  '@medusajs/js-sdk@2.7.1':
-    resolution: {integrity: sha512-k+1bJmFaTi610yBOJQ0K6OzXxz2W1b3vuCO8MmMcb91/ysl6tIPG7QNuT4RdUKsTyz8c55VK+pFSYZ2cTLJdHQ==}
+  '@medusajs/js-sdk@2.8.2':
+    resolution: {integrity: sha512-coaiCi8oNZ5Ga6uUbKgxGzXmlVNKri3N56NaHy57C5WqsA2EBxxffbxulazx1TjnX7GwszYZBu9aZDuEhqcc4w==}
     engines: {node: '>=20'}
 
-  '@medusajs/types@2.7.1':
-    resolution: {integrity: sha512-N1CXDwNRH2XnQBcMvtPgl9dWdCPaMGFZKT+Yduro9rhTrmuFDOJUtJpSM/fZIU5yA7RwJbrnnCWxBtJ0lQsEdA==}
+  '@medusajs/types@2.8.2':
+    resolution: {integrity: sha512-0x64cc30Of4oBQRPMIvHx154Fm/XT6uJLKIa6OqPgL4MEmVjhrhGJ/sTT8F0jZHB8cunXtyeB1ULFHMeT6uJEw==}
     engines: {node: '>=20'}
     peerDependencies:
       awilix: ^8.0.1
@@ -2766,9 +2766,9 @@ snapshots:
 
   '@lix-js/server-protocol-schema@0.1.1': {}
 
-  '@medusajs/js-sdk@2.7.1(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))':
+  '@medusajs/js-sdk@2.8.2(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))':
     dependencies:
-      '@medusajs/types': 2.7.1(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
+      '@medusajs/types': 2.8.2(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))
       fetch-event-stream: 0.1.5
       qs: 6.14.0
     transitivePeerDependencies:
@@ -2776,7 +2776,7 @@ snapshots:
       - ioredis
       - vite
 
-  '@medusajs/types@2.7.1(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))':
+  '@medusajs/types@2.8.2(awilix@8.0.1)(vite@6.3.5(jiti@2.4.2)(lightningcss@1.29.2))':
     dependencies:
       awilix: 8.0.1
       bignumber.js: 9.3.0
