@@ -11,11 +11,18 @@
 	--font-nunito: 'Nunito Sans', sans-serif;
 	--color-text: #1e1e1e;
 	--color-green-default: #59815b;
-	--color-green-dark: #3C553A;
-	--color-light-gray: #B9B9B9;
+	--color-green-dark: #3c553a;
+	--color-light-gray: #b9b9b9;
 	--color-wolf-gray: #878787;
 	--color-asphalt: #242625;
-	--color-wet-asphalt: #1E1E1E;
+	--color-wet-asphalt: #1e1e1e;
+	--color-lebanese-red: #ed1c24;
+	--color-lebanese-green: #008000;
+	--color-cedar-leaves-shadow: #2e401c;
+	--color-cedar-leaves-bright: #7c8c42;
+	--color-cedar-leaves-dark: #64732f;
+	--color-lebanes-land: #f2e4c9;
+	--color-tree-shadow: #262314;
 }
 
 @layer {
@@ -61,5 +68,3 @@
 	}
 }
 /* Название категории товаров */
-
-

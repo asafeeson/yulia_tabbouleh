@@ -14,7 +14,7 @@
 </script>
 
 <Header></Header>
-<main class="mb-12 space-y-12 lg:mb-24 lg:space-y-24">
+<main class="mb-12 lg:mb-24 ">
 	<HeroSection backgroundImageSrc="/hero_famous_lebanes.webp" urlButton="/shop/catalog"></HeroSection>
 	<CategoriesSection></CategoriesSection>
 	<Section

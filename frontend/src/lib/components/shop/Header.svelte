@@ -2,12 +2,12 @@
 	import type { Snippet } from 'svelte';
 	import Image from './Image.svelte';
 	import UilCart from '~icons/uil/cart';
-	import QlementineIconsUser16 from '~icons/qlementine-icons/user-16';
 	import SolarHamburgerMenuBold from '~icons/solar/hamburger-menu-bold';
 	import SolarCloseSquareBold from '~icons/solar/close-square-bold';
-	import Logo from '../SVG/Logo.svelte';
+	import Logo from '$lib/components/icons/Logo.svelte';
 	import { fade, fly } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
+	import CartSvg from '$lib/components/icons/CartSvg.svelte';
 
 	let { children }: { children?: Snippet } = $props();
 
@@ -32,9 +32,9 @@
 	};
 </script>
 
-<header class="flex min-h-[10dvh] w-full flex-col">
+<header class="bg-cedar-leaves-bright flex min-h-[10dvh] w-full flex-col">
 	<div
-		class=" text-asphalt flex-1/3 mx-auto flex h-full w-full max-w-[1216px] flex-grow justify-between px-6 lg:px-0"
+		class=" flex-1/3 mx-auto flex h-full w-full max-w-[1216px] flex-grow justify-between px-6 text-white lg:px-0"
 	>
 		<!-- menu -->
 		<nav class="flex-1/3 hidden items-center md:flex">
@@ -51,25 +51,21 @@
 			</ul>
 		</nav>
 		<!-- logotype -->
-		<a href="/" class="md:flex-1/3 flex items-center justify-start md:justify-center" >
+		<a href="/" class="md:flex-1/3 flex items-center justify-start md:justify-center">
 			<figure class="">
 				<Logo className="h-10 w-auto"></Logo>
 			</figure>
 		</a>
 		<!-- login & basket -->
 		<div class="text-asphalt md:flex-1/3 hidden items-center justify-end gap-2 md:flex md:gap-4">
-			<a href="/" class="group relative flex aspect-square h-10 w-10 items-center justify-center">
-				<QlementineIconsUser16
-					class="text-green-dark z-1 transition-color text-xl duration-300 group-hover:text-white"
-				></QlementineIconsUser16>
-				<span
-					class="group-hover:bg-green-default absolute inset-0 aspect-square origin-center scale-0 rounded-lg transition-all duration-300 group-hover:scale-100"
-				></span>
-			</a>
+			<div class="font-oswald font-normal text-white">
+				<a href="/" class="hover:font-bold transition-all">ВХОД</a>&nbsp;/&nbsp;<a href="/" class="hover:font-bold transition-all">РЕГИСТРАЦИЯ</a>
+			</div>
 			<a href="/" class="group relative flex aspect-square h-10 w-10 items-center justify-center">
 				<UilCart
 					class="text-green-dark  z-1 transition-color text-xl duration-300 group-hover:text-white"
 				></UilCart>
+				<CartSvg></CartSvg>
 				<span
 					class="group-hover:bg-green-default absolute inset-0 aspect-square origin-center scale-0 rounded-lg transition-all duration-300 group-hover:scale-100"
 				></span>
@@ -107,14 +103,12 @@
 			<div class="space-y-6">
 				<hr class="text-light-gray" />
 				<div class="flex items-center justify-end gap-4 text-white">
-					<a
-						href="/"
-						class="bg-green-default group relative flex aspect-square h-14 w-14 items-center justify-center rounded-xl"
-					>
-						<QlementineIconsUser16
-							class="z-1 transition-color text-xl duration-300 group-hover:text-white"
-						></QlementineIconsUser16>
-					</a>
+					<div>
+						<a href="/" class="font-oswald font-bold text-white">ВХОД</a>&nbsp;/&nbsp;<a
+							href="/"
+							class="font-oswald font-bold">РЕГИСТРАЦИЯ</a
+						>
+					</div>
 					<a
 						href="/"
 						class="bg-green-default group relative flex aspect-square h-14 w-14 items-center justify-center rounded-xl"

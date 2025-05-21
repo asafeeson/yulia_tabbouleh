@@ -18,11 +18,13 @@
 <Section
 	sectionHeight="h-[90dvh]"
 	sectionClass="relative"
-	sectionBackgound="bg-gradient-to-r from-green-dark via-green-default via-30% to-white to-80%"
+	sectionBackgound=""
 	contentFlexClass="flex flex-col mx-auto"
 	contentHeight="h-full"
 >
-	<div class="z-1 relative flex md:w-[40%] flex-grow flex-col justify-center gap-6 text-white px-6 lg:px-0">
+	<div
+		class="z-1 relative flex flex-grow flex-col justify-center gap-6 px-6  md:w-[40%] lg:px-0"
+	>
 		<h1>Восток ближе, чем кажется</h1>
 		<p class="mb-6">
 			Теперь у меня есть мой маленький Ливан, мой собственный Ближний Восток. Это мир, который
@@ -30,7 +32,7 @@
 			можно делиться не только словами, но и вещами, наполненными духом восточных базаров и тёплым
 			солнцем.
 		</p>
-		<Link href={urlButton} isSkeleton={true}>Смотреть коллекцию</Link>
+		<Link href={urlButton}>Смотреть коллекцию</Link>
 	</div>
 	{#if children}
 		{@render children()}

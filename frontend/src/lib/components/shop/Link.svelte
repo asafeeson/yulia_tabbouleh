@@ -31,12 +31,13 @@
 		children
 	}: Props = $props();
 
-	let classBaseButton = 'px-10 py-2.5 transition-all';
-	let classBold = 'relative text-white bg-green-default overflow-hidden group ' + classBaseButton,
+	let classBaseButton = 'px-8 py-4 transition-all font-oswald font-bold uppercase w-fit';
+	let classBold =
+			'relative text-white bg-cedar-leaves-bright overflow-hidden group ' + classBaseButton,
 		classSkeleton = 'relative border text-white overflow-hidden group ' + classBaseButton;
 </script>
 
-<span itemscope itemtype="https://schema.org/WebPage">
+<div itemscope itemtype="https://schema.org/WebPage" class={isSkeleton ? classSkeleton : classBold}>
 	<a
 		{href}
 		title={title || text}
@@ -44,15 +45,14 @@
 		rel={isExternal ? 'noopener noreferrer' : rel}
 		aria-label={ariaLabel || text}
 		{itemprop}
-		class={isSkeleton ? classSkeleton : classBold}
 	>
-		<span class="relative z-1">
+		<span class="z-1 relative">
 			{#if children}
 				{@render children()}
 			{/if}
 		</span>
 		<span
-			class="absolute inset-0 z-0 origin-left scale-x-0 transform bg-gradient-to-r from-green-dark to-transparent transition-transform duration-500 group-hover:scale-x-100"
+			class="from-cedar-leaves-shadow absolute inset-0 z-0 origin-left scale-x-0 transform bg-gradient-to-r to-transparent transition-transform duration-500 group-hover:scale-x-100"
 		></span>
 	</a>
 	{#if metaData}
@@ -60,4 +60,4 @@
 			<meta itemprop={meta.itemprop} content={meta.content} />
 		{/each}
 	{/if}
-</span>
+</div>

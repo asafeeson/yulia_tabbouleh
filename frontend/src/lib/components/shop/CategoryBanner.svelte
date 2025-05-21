@@ -1,5 +1,4 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
 	import Image from './Image.svelte';
 	import Link from './Link.svelte';
 
@@ -18,23 +17,23 @@
 	}: Props = $props();
 </script>
 
-<div class="relative flex min-h-80 w-full flex-col overflow-clip">
+<div class="relative flex min-h-[224px] px-10 py-6 w-full flex-col overflow-clip rounded-3xl bg-white">
 	<!-- card content -->
-	<div class="flex w-3/4 flex-grow flex-col justify-between gap-6 p-10">
-		<div class="space-y-6 text-white w-2/3">
-			<h3>{title}</h3>
+	<div class="flex w-3/4 flex-grow flex-col justify-between gap-6 ">
+		<div class="w-2/3 space-y-6 ">
+			<h3 class="font-normal">{title}</h3>
 			{#if subtitle}
 				<p>{subtitle}</p>
 			{/if}
 		</div>
-		<Link href={linkUrl} isSkeleton={true}>Каталог</Link>
+		<Link href={linkUrl}>Каталог</Link>
 	</div>
 	<!-- backgound fill -->
-	<div class="-z-1 absolute inset-0 bg-gradient-to-r from-green-default to-green-dark"></div>
+	<!-- <div class="-z-1 from-green-default to-green-dark absolute inset-0 bg-gradient-to-r"></div> -->
 	<!-- background image -->
 	<Image
 		src={backgroundImageSrc}
-		classImage="absolute right-4 top-0 object-cover h-full -z-1 py-6 drop-shadow-xl"
+		classImage="absolute right-4 top-0 object-cover h-full py-6 drop-shadow-xl"
 	/>
 </div>
 
