@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import MenuItem from '$lib/components/MenuItem.svelte';
-	import Link from '$lib/components/shop/Link.svelte';
+	import Link from '$lib/components/shop/UI/Link.svelte';
 
 	const { data }: { data: PageData } = $props();
 </script>

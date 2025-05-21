@@ -1,8 +1,8 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import Image from './Image.svelte';
+	import Image from '../UI/Image.svelte';
 	import Section from './Section.svelte';
-	import Link from './Link.svelte';
+	import Link from '../UI/Link.svelte';
 
 	interface Props {
 		children?: Snippet;
@@ -18,7 +18,7 @@
 <Section
 	sectionHeight="h-[90dvh]"
 	sectionClass="relative"
-	sectionBackgound=""
+	sectionBackground=""
 	contentFlexClass="flex flex-col mx-auto"
 	contentHeight="h-full"
 >

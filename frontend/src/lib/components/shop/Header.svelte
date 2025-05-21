@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import Image from './Image.svelte';
+	import Image from './UI/Image.svelte';
 	import UilCart from '~icons/uil/cart';
 	import SolarHamburgerMenuBold from '~icons/solar/hamburger-menu-bold';
 	import SolarCloseSquareBold from '~icons/solar/close-square-bold';

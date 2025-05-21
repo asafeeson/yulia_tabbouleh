@@ -10,7 +10,7 @@
 		sectionClass?: string;
 		contentClass?: string;
 		contentFlexClass?: string;
-		sectionBackgound?: string;
+		sectionBackground?: string;
 	}
 
 	let {
@@ -22,13 +22,13 @@
 		sectionClass = '',
 		contentClass = '',
 		contentFlexClass = 'flex items-center justify-center mx-auto',
-		sectionBackgound = ''
+		sectionBackground: sectionBackground = ''
 	}: Props = $props();
 </script>
 
 <section
 	class="w-full overflow-clip md:justify-start {sectionWidth ?? sectionWidth} {sectionHeight ??
-		sectionHeight} {sectionClass ?? sectionClass} {sectionBackgound ?? sectionBackgound}"
+		sectionHeight} {sectionClass ?? sectionClass} {sectionBackground ?? sectionBackground}"
 	id="section-content-wrapper"
 >
 	<div

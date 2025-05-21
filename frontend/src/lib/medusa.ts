@@ -12,6 +12,8 @@ if (!PUBLIC_MEDUSA_PUBLISHABLE_KEY) {
 
 let sdkInstance: Medusa | null = null;
 
+export const defaultRegionId = 'ru-RU';
+
 export async function getMedusaClient(): Promise<Medusa> {
 	if (!sdkInstance) {
 		sdkInstance = new Medusa({

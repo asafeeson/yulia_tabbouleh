@@ -1,6 +1,6 @@
 <script lang="ts">
 	import type { Snippet } from 'svelte';
-	import Image from './Image.svelte';
+	import Image from './UI/Image.svelte';
     interface Props {
         extraClass: string;
         children?: Snippet;

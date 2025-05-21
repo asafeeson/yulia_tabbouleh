@@ -1,6 +1,6 @@
 <script lang="ts">
-	import FiveStars from './FiveStars.svelte';
-	import Image from './Image.svelte';
+	import FiveStars from './UI/FiveStars.svelte';
+	import Image from './UI/Image.svelte';
 	interface Props {
 		image?: string;
 		title?: string;
@@ -23,7 +23,7 @@
 		<Image src={image} classImage="w-full"></Image>
 	</a>
 	<div class="space-y-2 md:px-1 px-4">
-		<h4 itemprop="name">{title}</h4>
+		<h6 itemprop="name">{title}</h6>
 		{#if description}
 			<p>{description}</p>
 		{/if}
