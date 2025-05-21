@@ -3,6 +3,7 @@
 
 	interface Props {
 		children: Snippet;
+		outsideContent?: Snippet;
 		sectionWidth?: string;
 		contentWidth?: string;
 		contentHeight?: string;
@@ -15,6 +16,7 @@
 
 	let {
 		children,
+		outsideContent,
 		contentWidth = 'max-w-[1216px]',
 		contentHeight = '',
 		sectionWidth = 'w-full',
@@ -39,6 +41,9 @@
 			{@render children()}
 		{/if}
 	</div>
+	{#if outsideContent}
+		{@render outsideContent()}
+	{/if}
 </section>
 
 <style>

@@ -1,14 +1,11 @@
 <script lang="ts">
-	import type { Snippet } from 'svelte';
-	import Section from './Section.svelte';
-	import HeroBannerWithCta from '../HeroBannerWithCTA.svelte';
-	import Link from '../UI/Link.svelte';
-	import ProductMiniCard from '../ProductMiniCard.svelte';
 	import type { ProductDTO } from '@medusajs/types';
+	import ProductMiniCard from '../ProductMiniCard.svelte';
+	import Section from './Section.svelte';
 	let { products }: { products: ProductDTO[] } = $props();
 </script>
 
-<Section contentFlexClass="flex flex-col items-stretch mx-auto py-12 gap-12">
+<Section contentFlexClass="flex flex-col items-stretch mx-auto py-12 md:px-0 px-6 gap-12">
 	<div class="flex flex-col items-center justify-center gap-3">
 		<h2>Новые поступления</h2>
 		<p>Новые поступления или скоро на вот-воте будут...</p>
@@ -20,7 +17,7 @@
 					<ProductMiniCard
 						image={product.thumbnail ?? ''}
 						title={product.title}
-						price={product.variants[0].calculated_price}
+						price={product.variants[0].options[0].value}
 					></ProductMiniCard>
 				</li>
 			{/each}

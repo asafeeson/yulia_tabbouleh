@@ -22,9 +22,7 @@
 	contentFlexClass="flex flex-col mx-auto"
 	contentHeight="h-full"
 >
-	<div
-		class="z-1 relative flex flex-grow flex-col justify-center gap-6 px-6  md:w-[40%] lg:px-0"
-	>
+	<div class="z-1 relative flex flex-grow flex-col justify-center gap-6 px-6 md:w-[40%] lg:px-0">
 		<h1>Восток ближе, чем кажется</h1>
 		<p class="mb-6">
 			Теперь у меня есть мой маленький Ливан, мой собственный Ближний Восток. Это мир, который

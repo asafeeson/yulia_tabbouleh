@@ -13,8 +13,10 @@
 		<h2>За каждым образом скрыта история...</h2>
 		<p>Для каждого продукта я описала историю и смысл изображения в карточке товара</p>
 	</div>
-	<div class="flex lg:flex-row flex-col gap-6 ">
-		<HeroBannerWithCta extraClass="lg:flex-1/3 relative flex flex-col h-[300px] lg:h-auto rounded-3xl overflow-hidden">
+	<div class="flex flex-col gap-6 lg:flex-row">
+		<HeroBannerWithCta
+			extraClass="lg:flex-1/3 relative flex flex-col h-[300px] lg:h-auto rounded-3xl overflow-hidden"
+		>
 			<div class="flex-grow"></div>
 			<div class="flex flex-col gap-6 px-6 pb-12">
 				<h4 class="text-white">Важный баннер о чем-то классном</h4>

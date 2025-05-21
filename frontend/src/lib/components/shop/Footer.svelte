@@ -1,5 +1,5 @@
 <script lang="ts">
-	import Logo from '../icons/CartSvg.svelte';
+	import Logo from "../icons/Logo.svelte";
 
 	const menuData = {
 		menuOne: [
