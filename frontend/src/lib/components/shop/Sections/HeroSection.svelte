@@ -22,9 +22,9 @@
 	contentFlexClass="flex flex-col mx-auto"
 	contentHeight="h-full"
 >
-	<div class="z-1 relative flex flex-grow flex-col justify-center gap-6 px-6 md:w-[40%] lg:px-0">
-		<h1>Восток ближе, чем кажется</h1>
-		<p class="mb-6">
+	<div class="z-1 relative flex flex-grow flex-col justify-center items-center md:items-left gap-6 px-6 md:w-[40%] lg:px-0">
+		<h1 class="md:text-left text-center">Восток ближе, чем кажется</h1>
+		<p class="mb-6 md:text-left text-center">
 			Теперь у меня есть мой маленький Ливан, мой собственный Ближний Восток. Это мир, который
 			станет продолжением блога Юлии Табулле, наполненным новыми историями и открытием себя. Здесь
 			можно делиться не только словами, но и вещами, наполненными духом восточных базаров и тёплым
@@ -38,7 +38,7 @@
 	{#if backgroundImageSrc}
 		<Image
 			src={backgroundImageSrc}
-			classImage="absolute right-0 top-1/2 -translate-y-1/2 object-cover h-full w-auto"
+			classImage="md:absolute md:right-0 md:top-1/2 md:-translate-y-1/2 object-cover h-full w-auto"
 		></Image>
 	{/if}
 </Section>
