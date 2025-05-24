@@ -1,14 +1,11 @@
-```yaml
-storage: /etc/traefik/acme.json # chmod 600 this file on the host system
-caServer: https://acme-staging-v02.api.letsencrypt.org/directory # IMPORTANT: comment out this line to get production ready certificates. After this, clear acme.json file.
-email: foobar@example.invalid # IMPORTANT: change this to your email
-```
+
 
 ## Перед началом
 
 ### Настройки Traefik / Traefik config setup
 
 - Настройте доступ к файлу acme.json с помощью `chmod 600` на хост машине.
+- Change example email to your real one in traefik.yaml ```email: foobar@example.invalid```.
 
 #### Настройте конфигурацию traefik.yaml
 
