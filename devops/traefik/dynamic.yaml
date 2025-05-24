@@ -33,7 +33,7 @@ http:
     auth:
       basicAuth:
         users:
-          - "username:$apr1$hashed-password"
+          - "username:$hashed-password"
 
     redirect-to-https:
       redirectScheme:
@@ -77,21 +77,5 @@ tls:
         - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
         - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
 
-
-http:
-  routers:
-    router-secure:
-      rule: Host(`example.com`)
-      service: service-id
-      middlewares:
-        - hsts-header
-      tls:
-        options: intermediate
-    router-insecure:
-      rule: Host(`example.com`)
-      service: service-id
-      middlewares:
-        - redirect-to-https
-        - hsts-header
 
 
