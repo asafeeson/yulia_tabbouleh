@@ -7,10 +7,27 @@ email: foobar@example.invalid # IMPORTANT: change this to your email
 ```
 
 ## Перед началом
-- Закомментируйте строки 
-
+- **ВАЖНО!** Закомментируйте следующие строки в traefik.yaml:
+    ``` 
+    api:
+      dashboard: true
+      insecure: true
+      debug: true
+    ```
+- Создайте сеть Docker:
+    ```bash 
+    # создаем сеть с название которое указано в настройках
+    sudo docker network create traefik_network
+    # проверяем наличие новой сети в списке
+    sudo docker network list
+    ```
+<br/>
+<br/>
 
 ## Security settings information / Информация о настройках безопасности
+
+> First, use your brain 🧠, not AI, before applying any settings. <br/>
+> Сначала включите 🧠 мозг, а не ИИ, и только потом применяйте. 
 
 In the secHeaders section of the config/dynamic.yaml file, HTTP security headers are configured for Traefik. Here is an explanation of each item:
 
