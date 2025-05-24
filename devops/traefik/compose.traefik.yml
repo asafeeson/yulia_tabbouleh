@@ -1,11 +1,11 @@
 version: "3.3"
 
 services:
-
   traefik:
     image: "traefik:v3.4"
-    container_name: "traefik"
-    command: 
+    container_name: traefik
+    restart: unless-stopped
+    command:
       - "--api.insecure=true"
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
@@ -16,11 +16,17 @@ services:
       - "443:443"
     volumes:
       - "/var/run/docker.sock:/var/run/docker.sock:ro"
+      - "./traefik.yml:/etc/traefik:ro"
+      - "./certificates/acme.json:/traefik/certificates/acme.json:rw"
 
   whoami:
     image: "traefik/whoami"
     container_name: "simple-service"
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`whoami.localhost`)"
+      - "traefik.http.routers.whoami.rule=Host(`http://tabbouleh.botadmin.space`)"
       - "traefik.http.routers.whoami.entrypoints=web"
+
+networks:
+  traefik_network:
+    internal: true

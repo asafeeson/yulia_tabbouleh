@@ -1,1 +1,42 @@
-# traefik conf
+# traefik static conf
+api:
+  dashboard: true   # set to false in production 
+  insecure: true    # set to false in production 
+  debug: true       # set to false in production 
+
+entryPoints:
+  web:
+    address: ":80"
+    http:
+      redirections:
+        entryPoint:
+          to: websecure
+          scheme: https
+  websecure:
+    address: ":443"
+
+providers:
+  docker:
+    endpoint: "unix:///var/run/docker.sock"
+    exposedByDefault: false
+    network: traefik-network
+
+serversTransport:
+  insecureSkipVerify: true
+
+certificatesResolvers:
+  tlschallenge:
+    acme:
+      caServer: https://acme-staging-v02.api.letsencrypt.org/directory # IMPORTANT: comment out this line to get production ready certificates. After this, clear acme.json file.
+      email: foobar@example.invalid
+      storage: /etc/traefik/acme.json # chmod 600 this file on the host system
+      tlsChallenge: {}
+
+log:
+  level: "INFO"
+  filePath: "/var/log/traefik/traefik.log"
+accessLog:
+  filePath: "/var/log/traefik/access.log"
+
+global:
+  checkNewVersion: true
