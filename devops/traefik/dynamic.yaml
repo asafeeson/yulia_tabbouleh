@@ -1,26 +1,54 @@
 ---
 # set more secure TLS options,
 # see https://doc.traefik.io/traefik/https/tls/
+# including: generated 2025-05-24, Mozilla Guideline v5.7, Traefik 3.2.1, intermediate config
+# https://ssl-config.mozilla.org/#server=traefik&version=3.2.1&config=intermediate&guideline=5.7
 
 # dashboard access configuration
 http:
   routers:
-    dashboard: 
+    dashboard:
       rule: Host(`traefik.example.com`) && (PathPrefix(`/api`) || PathPrefix(`/dashboard`))
       service: api@internal
       middlewares:
         - auth
 
+    router-secure:
+      options: "intermediate"
+      rule: Host(`example.com`)
+      service: service-id
+      middlewares:
+        - hsts-header
+      tls:
+        options: intermediate
+
+    router-insecure:
+      rule: Host(`example.com`)
+      service: service-id
+      middlewares:
+        - redirect-to-https
+        - hsts-header
+
   middlewares:
     auth:
       basicAuth:
         users:
-          - "username:$apr1$H6uskkkW$IgXLP6ewTrSuBkTrqE8wj/"
-    secHeaders:
+          - "username:$apr1$hashed-password"
+
+    redirect-to-https:
+      redirectScheme:
+        scheme: https
+
+    hsts-header:
       headers:
+        customResponseHeaders:
+          Strict-Transport-Security: "max-age=63072000"
+
+    securityHeaders:
+      headers:
+        frameDeny: true
         browserXssFilter: true
         contentTypeNosniff: true
-        frameDeny: true
         stsIncludeSubdomains: true
         stsPreload: true
         stsSeconds: 31536000
@@ -35,15 +63,35 @@ http:
 # tls conf
 tls:
   options:
-    default:
-      minVersion: VersionTLS12
-      cipherSuites:
-        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
-        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
-        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
-        - TLS_AES_128_GCM_SHA256
-        - TLS_AES_256_GCM_SHA384
-        - TLS_CHACHA20_POLY1305_SHA256
+    intermediate:
+      minVersion: TLSv1.2
       curvePreferences:
-        - CurveP521
+        - X25519
+        - CurveP256
         - CurveP384
+      cipherSuites:
+        - TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256
+        - TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384
+        - TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305
+        - TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305
+
+
+http:
+  routers:
+    router-secure:
+      rule: Host(`example.com`)
+      service: service-id
+      middlewares:
+        - hsts-header
+      tls:
+        options: intermediate
+    router-insecure:
+      rule: Host(`example.com`)
+      service: service-id
+      middlewares:
+        - redirect-to-https
+        - hsts-header
+
+

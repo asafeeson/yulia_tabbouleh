@@ -2,7 +2,13 @@
 ```yaml
 storage: /etc/traefik/acme.json # chmod 600 this file on the host system
 caServer: https://acme-staging-v02.api.letsencrypt.org/directory # IMPORTANT: comment out this line to get production ready certificates. After this, clear acme.json file.
+email: foobar@example.invalid # IMPORTANT: change this to your email
+
 ```
+
+## Перед началом
+- Закомментируйте строки 
+
 
 ## Security settings information / Информация о настройках безопасности
 

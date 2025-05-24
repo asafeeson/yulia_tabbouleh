@@ -5,27 +5,15 @@ services:
     image: "traefik:v3.4"
     container_name: traefik
     restart: unless-stopped
-    command:
-      - "--api.insecure=true"
-      - "--providers.docker=true"
-      - "--providers.docker.exposedbydefault=false"
-      - "--entryPoints.web.address=:80"
     ports:
       - "80:80"
-      - "8080:8080"
       - "443:443"
     volumes:
-      - "/var/run/docker.sock:/var/run/docker.sock:ro"
-      - "./traefik.yml:/etc/traefik:ro"
-      - "./certificates/acme.json:/traefik/certificates/acme.json:rw"
-
-  whoami:
-    image: "traefik/whoami"
-    container_name: "simple-service"
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.whoami.rule=Host(`http://tabbouleh.botadmin.space`)"
-      - "traefik.http.routers.whoami.entrypoints=web"
+      - /etc/localtime:/etc/localtime:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
+      - ./dynamic.yaml:/etc/traefik/dynamic.yaml:ro
+      - ./certificates/acme.json:/traefik/certificates/acme.json:rw
 
 networks:
   traefik_network:

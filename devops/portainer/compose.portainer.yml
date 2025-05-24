@@ -12,13 +12,13 @@ services:
 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.portainer.entrypoints=http"
+      - "traefik.http.routers.portainer.entrypoints=web"
       - "traefik.http.routers.portainer.rule=Host(`portainer.botadmin.space`)"
 
       - "traefik.http.middlewares.portainer-https-redirect.redirectscheme.scheme=https"
       - "traefik.http.routers.portainer.middlewares=portainer-https-redirect"
 
-      - "traefik.http.routers.portainer-secure.entrypoints=https"
+      - "traefik.http.routers.portainer-secure.entrypoints=websecure"
       - "traefik.http.routers.portainer-secure.rule=Host(`portainer.botadmin.space`)"
       - "traefik.http.routers.portainer-secure.service=portainer"
       - "traefik.http.routers.portainer-secure.tls=true"
@@ -28,9 +28,9 @@ services:
       - traefik_network
 
 networks:
-  traefik-network:
+  traefik_network:
     external: true
-    name: traefik-network
+    name: traefik_network
 
 volumes:
   portainer_data:
