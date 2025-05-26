@@ -1,0 +1,17 @@
+version: '3.3'
+
+services:
+  frontstore:
+    build:
+      dockerfile: ./Dockerfile
+    container_name: frontstore
+    restart: always
+    environment:
+      - ENVIRONMENT=${ENVIRONMENT}
+      - BODY_SIZE_LIMIT=${BODY_SIZE_LIMIT}
+      - PUBLIC_MEDUSA_BACKEND_URL=${PUBLIC_MEDUSA_BACKEND_URL}
+      - MEDUSA_BACKEND_URL=${MEDUSA_BACKEND_URL}
+      - PUBLIC_MEDUSA_PUBLISHABLE_KEY=${PUBLIC_MEDUSA_PUBLISHABLE_KEY}
+    ports:
+      - "3000:3000"
+  

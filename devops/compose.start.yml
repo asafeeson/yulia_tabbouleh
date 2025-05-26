@@ -1,0 +1,41 @@
+include:
+  - "./traefik/compose.traefik.yml"
+  - "./portainer/compose.portainer.yml"
+
+services:
+  frontstore:
+    extends:
+      file: "../frontend/compose.storefront.yaml"
+      service: frontstore
+    labels:
+      - 'traefik.enable=true'
+
+      # routers entrypoints
+      - 'traefik.http.routers.storefront.entrypoints=web'
+      - 'traefik.http.routers.storefront-secure.entrypoints=websecure'
+
+      # routers rules
+      - 'traefik.http.routers.storefront.rule=Host(`${STOREFRONT_HOST}`)'
+      - 'traefik.http.routers.storefront-secure.rule=Host(`${STOREFRONT_HOST}`)'
+
+      # middlewares
+      - 'traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https'
+
+      # apply middlewares to routers
+      - 'traefik.http.routers.storefront.middlewares=redirect-to-https'
+
+      # tls and certificates
+      - 'traefik.http.routers.storefront-secure.tls=true'
+      - 'traefik.http.routers.storefront-secure.tls.certresolver=tlschallenge'
+
+      # apply services to routers
+      - 'traefik.http.routers.storefront-secure.service=storefront'
+
+      # services
+      - 'traefik.http.services.storefront.loadbalancer.server.port=${STOREFRONT_LOADBALANCER_PORT}'
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true

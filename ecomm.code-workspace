@@ -9,7 +9,12 @@
 		{
 			"path": "frontend"
 		},
-		{	"path": "devops" }
+		{
+			"path": "devops"
+		},
+		{
+			"path": "backend-ghost"
+		}
 	],
 	"settings": {}
 }
