@@ -1,0 +1,105 @@
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Ghost is running in development...","time":"2025-05-26T10:28:02.742Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Listening on: 127.0.0.1:2368","time":"2025-05-26T10:28:02.743Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Url configured as: http://localhost:2368/","time":"2025-05-26T10:28:02.743Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Ctrl+C to shut down","time":"2025-05-26T10:28:02.744Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Ghost server started in 0.498s","time":"2025-05-26T10:28:02.750Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":40,"version":"5.120.2","msg":"Database state requires initialisation.","time":"2025-05-26T10:28:02.896Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: newsletters","time":"2025-05-26T10:28:03.114Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: posts","time":"2025-05-26T10:28:03.132Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: posts_meta","time":"2025-05-26T10:28:03.156Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: users","time":"2025-05-26T10:28:03.164Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: posts_authors","time":"2025-05-26T10:28:03.174Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: roles","time":"2025-05-26T10:28:03.178Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: roles_users","time":"2025-05-26T10:28:03.184Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: permissions","time":"2025-05-26T10:28:03.187Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: permissions_users","time":"2025-05-26T10:28:03.194Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: permissions_roles","time":"2025-05-26T10:28:03.197Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: settings","time":"2025-05-26T10:28:03.200Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: tags","time":"2025-05-26T10:28:03.207Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: posts_tags","time":"2025-05-26T10:28:03.214Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: invites","time":"2025-05-26T10:28:03.220Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: brute","time":"2025-05-26T10:28:03.229Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: sessions","time":"2025-05-26T10:28:03.233Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: integrations","time":"2025-05-26T10:28:03.240Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: webhooks","time":"2025-05-26T10:28:03.247Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: api_keys","time":"2025-05-26T10:28:03.251Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: mobiledoc_revisions","time":"2025-05-26T10:28:03.258Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: post_revisions","time":"2025-05-26T10:28:03.265Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members","time":"2025-05-26T10:28:03.272Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: products","time":"2025-05-26T10:28:03.294Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: offers","time":"2025-05-26T10:28:03.304Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: benefits","time":"2025-05-26T10:28:03.322Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: products_benefits","time":"2025-05-26T10:28:03.335Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_products","time":"2025-05-26T10:28:03.340Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: posts_products","time":"2025-05-26T10:28:03.345Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_created_events","time":"2025-05-26T10:28:03.351Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_cancel_events","time":"2025-05-26T10:28:03.361Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_payment_events","time":"2025-05-26T10:28:03.365Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_login_events","time":"2025-05-26T10:28:03.370Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_email_change_events","time":"2025-05-26T10:28:03.374Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_status_events","time":"2025-05-26T10:28:03.378Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_product_events","time":"2025-05-26T10:28:03.381Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_paid_subscription_events","time":"2025-05-26T10:28:03.386Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: labels","time":"2025-05-26T10:28:03.390Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_labels","time":"2025-05-26T10:28:03.403Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_stripe_customers","time":"2025-05-26T10:28:03.408Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: subscriptions","time":"2025-05-26T10:28:03.417Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_stripe_customers_subscriptions","time":"2025-05-26T10:28:03.422Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_subscription_created_events","time":"2025-05-26T10:28:03.435Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: offer_redemptions","time":"2025-05-26T10:28:03.443Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_subscribe_events","time":"2025-05-26T10:28:03.447Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: donation_payment_events","time":"2025-05-26T10:28:03.451Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: stripe_products","time":"2025-05-26T10:28:03.456Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: stripe_prices","time":"2025-05-26T10:28:03.467Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: actions","time":"2025-05-26T10:28:03.477Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: emails","time":"2025-05-26T10:28:03.481Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: email_batches","time":"2025-05-26T10:28:03.495Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: email_recipients","time":"2025-05-26T10:28:03.500Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: email_recipient_failures","time":"2025-05-26T10:28:03.522Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: tokens","time":"2025-05-26T10:28:03.528Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: snippets","time":"2025-05-26T10:28:03.539Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: custom_theme_settings","time":"2025-05-26T10:28:03.550Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_newsletters","time":"2025-05-26T10:28:03.555Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: comments","time":"2025-05-26T10:28:03.563Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: comment_likes","time":"2025-05-26T10:28:03.567Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: comment_reports","time":"2025-05-26T10:28:03.571Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: jobs","time":"2025-05-26T10:28:03.574Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: redirects","time":"2025-05-26T10:28:03.584Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_click_events","time":"2025-05-26T10:28:03.590Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: members_feedback","time":"2025-05-26T10:28:03.594Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: suppressions","time":"2025-05-26T10:28:03.597Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: email_spam_complaint_events","time":"2025-05-26T10:28:03.605Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: mentions","time":"2025-05-26T10:28:03.618Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: milestones","time":"2025-05-26T10:28:03.624Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: temp_mail_events","time":"2025-05-26T10:28:03.630Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: collections","time":"2025-05-26T10:28:03.636Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: collections_posts","time":"2025-05-26T10:28:03.643Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: recommendations","time":"2025-05-26T10:28:03.647Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: recommendation_click_events","time":"2025-05-26T10:28:03.651Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Creating table: recommendation_subscribe_events","time":"2025-05-26T10:28:03.655Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Collection","time":"2025-05-26T10:28:04.060Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Product","time":"2025-05-26T10:28:04.066Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Newsletter","time":"2025-05-26T10:28:04.077Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Tag","time":"2025-05-26T10:28:04.082Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Permission","time":"2025-05-26T10:28:04.087Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Post","time":"2025-05-26T10:28:04.384Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Model: Integration","time":"2025-05-26T10:28:04.721Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Relation: Role to Permission","time":"2025-05-26T10:28:04.787Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Relation: Post to Tag","time":"2025-05-26T10:28:05.098Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Database is in a ready state.","time":"2025-05-26T10:28:05.168Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Ghost database ready in 2.923s","time":"2025-05-26T10:28:05.169Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Invalidating assets for regeneration","time":"2025-05-26T10:28:06.689Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Adding offloaded job to the inline job queue","time":"2025-05-26T10:28:07.162Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Scheduling job mentions-email-report at 25 13 * * * *. Next run on: Mon May 26 2025 13:13:25 GMT+0200 (Central European Summer Time)","time":"2025-05-26T10:28:07.168Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Adding one-off job to inlineQueue with current length = 0 called 'members-migrations'","time":"2025-05-26T10:28:07.364Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Stripe not configured - skipping migrations","time":"2025-05-26T10:28:07.373Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"URL Service ready in 1169ms","time":"2025-05-26T10:28:07.518Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Adding offloaded job to the inline job queue","time":"2025-05-26T10:28:07.835Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Scheduling job clean-expired-comped at 27 31 3 * * *. Next run on: Tue May 27 2025 03:31:27 GMT+0200 (Central European Summer Time)","time":"2025-05-26T10:28:07.837Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Adding offloaded job to the inline job queue","time":"2025-05-26T10:28:07.842Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Scheduling job clean-tokens at 23 55 13 * * *. Next run on: Mon May 26 2025 13:55:23 GMT+0200 (Central European Summer Time)","time":"2025-05-26T10:28:07.844Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Ghost booted in 5.603s","time":"2025-05-26T10:28:07.850Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Adding offloaded job to the inline job queue","time":"2025-05-26T10:28:07.855Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Scheduling job update-check at 48 6 20 * * *. Next run on: Mon May 26 2025 20:06:48 GMT+0200 (Central European Summer Time)","time":"2025-05-26T10:28:07.858Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"Running milestone emails job on Mon May 26 2025 12:28:12 GMT+0200 (Central European Summer Time)","time":"2025-05-26T10:28:07.865Z","v":0}
+{"name":"Log","hostname":"AsafeeSon","pid":50546,"level":30,"version":"5.120.2","msg":"[Recommendations] Updating recommendations metadata","time":"2025-05-26T10:30:58.373Z","v":0}
