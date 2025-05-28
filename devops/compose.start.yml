@@ -84,6 +84,10 @@ services:
     networks:
       - traefik_network
 
+volumes:
+  portainer_data:
+  redis_data:
+
 networks:
   traefik_network:
     external: true
