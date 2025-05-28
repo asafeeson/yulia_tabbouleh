@@ -14,6 +14,12 @@
 		},
 		{
 			"path": "backend-ghost"
+		},
+		{
+			"path": "medusa"
+		},
+		{
+			"path": "woocommerce"
 		}
 	],
 	"settings": {}
