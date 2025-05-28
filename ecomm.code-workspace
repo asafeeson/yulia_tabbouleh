@@ -1,25 +1,32 @@
 {
 	"folders": [
 		{
+			"name": "backend-ecomm",
 			"path": "backend-ecomm"
 		},
 		{
+			"name": "backend-www",
 			"path": "backend-www"
 		},
 		{
+			"name": "frontend",
 			"path": "frontend"
 		},
 		{
-			"path": "devops"
-		},
-		{
+			"name": "backend-ghost",
 			"path": "backend-ghost"
 		},
 		{
+			"name": "medusa",
 			"path": "medusa"
 		},
 		{
+			"name": "woocommerce",
 			"path": "woocommerce"
+		},
+		{
+			"name": "devops",
+			"path": "devops"
 		}
 	],
 	"settings": {}
