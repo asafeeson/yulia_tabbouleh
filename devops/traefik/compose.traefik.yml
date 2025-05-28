@@ -19,4 +19,4 @@ services:
 
 networks:
   traefik_network:
-    internal: true
+    external: true
