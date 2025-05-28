@@ -1,10 +1,10 @@
 <script lang="ts">
-	import type { ProductDTO } from '@medusajs/types';
+	import type { WooProduct } from '$lib/woo/types/products';
 	import HeroBannerWithCta from '../HeroBannerWithCTA.svelte';
 	import ProductMiniCard from '../ProductMiniCard.svelte';
 	import Link from '../UI/Link.svelte';
 	import Section from './Section.svelte';
-	let { products }: { products: ProductDTO[] } = $props();
+	let { products }: { products: WooProduct[] } = $props();
 </script>
 
 <Section contentFlexClass="flex flex-col items-stretch mx-auto py-12 gap-12 md:px-0 px-6">
@@ -26,9 +26,9 @@
 			{#each products as product}
 				<li>
 					<ProductMiniCard
-						image={product.thumbnail ?? ''}
-						title={product.title}
-						price={product.variants[0].calculated_price}
+						image={product.images[0].src ?? ''}
+						title={product.name}
+						price={product.price}
 					></ProductMiniCard>
 				</li>
 			{/each}
