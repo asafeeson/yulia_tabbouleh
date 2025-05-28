@@ -5,30 +5,30 @@ include:
 services:
   frontstore:
     extends:
-      file: "../frontend/compose.woocommerce.yaml"
+      file: "../frontend/compose.storefront.yaml"
       service: frontstore
     environment:
-      woocommerce_HOST: ${woocommerce_HOST}
-      woocommerce_LOADBALANCER_PORT: ${woocommerce_LOADBALANCER_PORT}
+      storefront_HOST: ${storefront_HOST}
+      storefront_LOADBALANCER_PORT: ${storefront_LOADBALANCER_PORT}
     labels:
       - 'traefik.enable=true'
       # routers entrypoints
-      - 'traefik.http.routers.woocommerce.entrypoints=web'
-      - 'traefik.http.routers.woocommerce-secure.entrypoints=websecure'
+      - 'traefik.http.routers.storefront.entrypoints=web'
+      - 'traefik.http.routers.storefront-secure.entrypoints=websecure'
       # routers rules
-      - 'traefik.http.routers.woocommerce.rule=Host(`${woocommerce_HOST}`)'
-      - 'traefik.http.routers.woocommerce-secure.rule=Host(`${woocommerce_HOST}`)'
+      - 'traefik.http.routers.storefront.rule=Host(`${storefront_HOST}`)'
+      - 'traefik.http.routers.storefront-secure.rule=Host(`${storefront_HOST}`)'
       # middlewares
       - 'traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https'
       # apply middlewares to routers
-      - 'traefik.http.routers.woocommerce.middlewares=redirect-to-https'
+      - 'traefik.http.routers.storefront.middlewares=redirect-to-https'
       # tls and certificates
-      - 'traefik.http.routers.woocommerce-secure.tls=true'
-      - 'traefik.http.routers.woocommerce-secure.tls.certresolver=tlschallenge'
+      - 'traefik.http.routers.storefront-secure.tls=true'
+      - 'traefik.http.routers.storefront-secure.tls.certresolver=tlschallenge'
       # apply services to routers
-      - 'traefik.http.routers.woocommerce-secure.service=woocommerce'
+      - 'traefik.http.routers.storefront-secure.service=storefront'
       # services
-      - 'traefik.http.services.woocommerce.loadbalancer.server.port=${woocommerce_LOADBALANCER_PORT}'
+      - 'traefik.http.services.storefront.loadbalancer.server.port=${storefront_LOADBALANCER_PORT}'
     networks:
       - traefik_network
   
