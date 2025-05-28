@@ -2,8 +2,7 @@ version: '3.3'
 
 services:
   frontstore:
-    build:
-      dockerfile: ./Dockerfile
+    build: .
     container_name: frontstore
     restart: always
     environment:
