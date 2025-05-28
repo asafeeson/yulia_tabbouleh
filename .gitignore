@@ -164,6 +164,9 @@ readme.html
 # wp-content/themes/
 wc-logs/
 woocommerce.log
+woocommerce/plugins
+woocommerce/db_data
+woocommerce/wordpress
 
 ########################################
 # Composer dependencies
