@@ -1,9 +1,9 @@
 version: '3.3'
 
 services:
-  frontstore:
+  storefront:
     build: .
-    container_name: frontstore
+    container_name: storefront
     restart: always
     environment:
       - ENVIRONMENT=${ENVIRONMENT}

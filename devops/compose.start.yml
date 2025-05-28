@@ -3,10 +3,10 @@ include:
   - "./portainer/compose.portainer.yml"
 
 services:
-  frontstore:
+  storefront:
     extends:
       file: "../frontend/compose.storefront.yaml"
-      service: frontstore
+      service: storefront
     environment:
       storefront_HOST: ${storefront_HOST}
       storefront_LOADBALANCER_PORT: ${storefront_LOADBALANCER_PORT}
