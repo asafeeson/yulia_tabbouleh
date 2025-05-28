@@ -31,6 +31,8 @@
 		"@tailwindcss/vite": "^4.0.0",
 		"@testing-library/jest-dom": "^6.6.3",
 		"@testing-library/svelte": "^5.2.4",
+		"@types/crypto-js": "^4.2.2",
+		"@types/qs": "^6.14.0",
 		"autoprefixer": "^10.4.21",
 		"eslint": "^9.18.0",
 		"eslint-config-prettier": "^10.0.1",
@@ -54,7 +56,11 @@
 	"dependencies": {
 		"@inlang/paraglide-js": "^2.0.0",
 		"@medusajs/js-sdk": "^2.8.2",
-		"@medusajs/types": "^2.8.2"
+		"@medusajs/types": "^2.8.2",
+		"@woocommerce/woocommerce-rest-api": "^1.0.1",
+		"axios": "^1.9.0",
+		"crypto-js": "^4.2.0",
+		"qs": "^6.14.0"
 	},
 	"pnpm": {
 		"onlyBuiltDependencies": [
@@ -63,5 +69,6 @@
 		"ignoredBuiltDependencies": [
 			"@tailwindcss/oxide"
 		]
-	}
+	},
+	"packageManager": "pnpm@10.11.0+sha512.6540583f41cc5f628eb3d9773ecee802f4f9ef9923cc45b69890fb47991d4b092964694ec3a4f738a420c918a333062c8b925d312f42e4f0c263eb603551f977"
 }
