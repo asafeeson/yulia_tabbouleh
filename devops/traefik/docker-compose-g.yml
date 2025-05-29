@@ -11,7 +11,7 @@ services:
       - "443:443" # The HTTPS port
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro # So Traefik can listen to Docker events
-      - ./traefik-data/acme.json:/etc/traefik/acme.json # Let's Encrypt certificates (make sure this file exists and has 600 permissions!)
+      - "./certificates/acme.json:/etc/traefik/acme.json"
     environment:
       # This environment variable will be picked up from your .env file
       - TRAEFIK_HOST=${TRAEFIK_HOST}
