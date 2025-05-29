@@ -1,7 +1,7 @@
 services:
   traefik:
     extends:
-      file: "./traefik/compose.traefik.yml"
+      file: "./traefik/docker-compose.yml"
       service: traefik
     environment:
       TRAEFIK_HOST: ${TRAEFIK_HOST}
