@@ -64,4 +64,4 @@ services:
 networks:
   default:
     external: true
-    name: traefik_proxy # Or whatever name you want for your Traefik network
+    name: traefik_network # Or whatever name you want for your Traefik network
