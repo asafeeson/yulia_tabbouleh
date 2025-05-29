@@ -1,7 +1,43 @@
-include:
-  - "./traefik/compose.traefik.yml"
-
 services:
+  traefik:
+    extends:
+      file: "./traefik/compose.traefik.yml"
+      service: traefik
+    environment:
+      TRAEFIK_HOST: ${TRAEFIK_HOST}
+      TRAEFIK_LOADBALANCER_PORT: ${TRAEFIK_LOADBALANCER_PORT}
+    labels:
+      # Настройки HTTP для редиректа на HTTPS
+      - traefik.enable=true
+      - traefik.http.routers.traefik.rule=Host(`${PORTAINER_HOST}`)
+      - traefik.http.services.traefik.loadbalancer.server.port=${TRAEFIK_LOADBALANCER_PORT}
+
+      - "traefik.http.routers.traefik.entrypoints=web"
+      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
+
+      # Middleware: traefik-https-redirect and redirect-to-https
+      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
+      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+
+      # Router: http-catchall
+      - "traefik.http.routers.http-catchall.rule=HostRegexp(`{host:.+}`)"
+      - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
+
+      # Настройки для HTTPS
+      - "traefik.http.routers.traefik-secure.entrypoints=websecure"
+      - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_HOST}`)"
+      - "traefik.http.services.traefik-secure.loadbalancer.server.port=${TRAEFIK_LOADBALANCER_PORT}"
+      # - "traefik.http.routers.traefik-secure.middlewares=cors,traefik-auth"
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+
+      - "traefik.http.routers.traefik-secure.tls=true"
+      - "traefik.http.routers.traefik-secure.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.traefik-secure.service=api@internal"
+
+      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+    networks:
+      - traefik_network
+
   portainer:
     extends:
       file: "./portainer/compose.portainer.yml"
