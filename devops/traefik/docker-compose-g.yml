@@ -1,0 +1,67 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  traefik:
+    image: traefik:v2.11 # You can use the latest stable version of Traefik v2
+    container_name: traefik
+    restart: always
+    ports:
+      - "80:80"   # The HTTP port
+      - "443:443" # The HTTPS port
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # So Traefik can listen to Docker events
+      - ./traefik-data/acme.json:/etc/traefik/acme.json # Let's Encrypt certificates (make sure this file exists and has 600 permissions!)
+    environment:
+      # This environment variable will be picked up from your .env file
+      - TRAEFIK_HOST=${TRAEFIK_HOST}
+    command:
+      # Entrypoints
+      - --entrypoints.web.address=:80
+      - --entrypoints.websecure.address=:443
+
+      # Enable Docker provider
+      - --providers.docker=true
+      - --providers.docker.exposedbydefault=false # Only expose containers that have traefik.enable=true label
+
+      # Enable API and Dashboard (via labels below)
+      - --api=true # Enable Traefik's API
+      - --api.dashboard=true # Enable Traefik's dashboard
+
+      # Enable access logs
+      - --accesslog=true
+
+      # Let's Encrypt (HTTPS) configuration
+      - --certificatesresolvers.myresolver.acme.email=asafeeson@outlook.com # REPLACE WITH YOUR EMAIL
+      - --certificatesresolvers.myresolver.acme.storage=/etc/traefik/acme.json
+      - --certificatesresolvers.myresolver.acme.httpchallenge=true
+      - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web
+
+      # Global redirect HTTP to HTTPS
+      - --entrypoints.web.http.redirections.entrypoint.to=websecure
+      - --entrypoints.web.http.redirections.entrypoint.permanent=true
+
+    labels:
+      # Enable Traefik for this container
+      - traefik.enable=true
+
+      # Dashboard configuration
+      - traefik.http.routers.traefik-dashboard.rule=Host(`${TRAEFIK_HOST}`)
+      - traefik.http.routers.traefik-dashboard.entrypoints=websecure
+      - traefik.http.routers.traefik-dashboard.service=api@internal
+      - traefik.http.routers.traefik-dashboard.middlewares=traefik-dashboard-auth
+      - traefik.http.routers.traefik-dashboard.tls.certresolver=myresolver
+
+      # Middleware for basic authentication on the dashboard (RECOMMENDED!)
+      # Replace 'youruser' and 'yourhashedpassword' with actual credentials.
+      # You can generate the hash using 'htpasswd -nb user password'
+      # For example, for user 'admin' and password 'password123', run:
+      # echo $(htpasswd -nb admin password123) | sed -e s/\\$/\\$\\$/g
+      # This will output something like: admin:$apr1$.......
+      # Use the entire output string as the value for basicauth.users.
+      - traefik.http.middlewares.traefik-dashboard-auth.basicauth.users=user:$$apr1$$XXXXXXXX$$YYYYYYYYYYYYY # REPLACE WITH YOUR HASHED USER:PASSWORD
+      
+networks:
+  default:
+    external: true
+    name: traefik_proxy # Or whatever name you want for your Traefik network
