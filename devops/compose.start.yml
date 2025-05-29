@@ -9,7 +9,7 @@ services:
     labels:
       # Настройки HTTP для редиректа на HTTPS
       - traefik.enable=true
-      - traefik.http.routers.traefik.rule=Host(`${PORTAINER_HOST}`)
+      - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)
       - traefik.http.services.traefik.loadbalancer.server.port=${TRAEFIK_LOADBALANCER_PORT}
 
       - "traefik.http.routers.traefik.entrypoints=web"
