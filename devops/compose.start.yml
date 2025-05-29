@@ -58,10 +58,17 @@ services:
     networks:
       - traefik_network
 
+  db:
+    extends:
+      file: "../woocommerce/docker-compose.yaml"
+      service: db
+
   woocommerce:
     extends:
       file: "../woocommerce/docker-compose.yaml"
       service: wordpress
+    depends_on:
+      - db
     labels:
       - "traefik.enable=true"
       # routers entrypoints
@@ -87,6 +94,7 @@ services:
 volumes:
   portainer_data:
   redis_data:
+  db_data:
 
 networks:
   traefik_network:
