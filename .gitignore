@@ -118,13 +118,7 @@ yarn-error.log*
 .pnp.js
 .pnp.*
 .yarn/*
-!.yarn/patches
-!.yarn/plugins
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
 .yarn/install-state.gz
-yarn-error.log
 tsconfig.tsbuildinfo
 *.tsbuildinfo
 next-env.d.ts
@@ -189,22 +183,25 @@ woocommerce/wordpress
 *.tmp
 *.zip
 *.tar.gz
-cheks_raw_ocr_data.txt
-db_query_test.py
 dump.rdb
-logging.conf
-medusa-db.sql
 nginx_proxy_manager/data/database.sqlite
 nginx_proxy_manager/data/keys.json
-only_ocr_data.txt
-redis_data
 site/
 temp-files/
 uploads
 /media
 .paraglide
-src/lib/paraglide
+
+########################################
+# Redis Data
+########################################
+redis_data
+
+########################################
+# MedusaJS
+########################################
 .medusa
+medusa-db.sql
 
 ########################################
 # Sensitive files
