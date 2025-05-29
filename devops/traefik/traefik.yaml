@@ -19,12 +19,12 @@ entryPoints:
 
 providers:
   docker:
+    endpoint: "unix://var/run/docker.sock"
     exposedByDefault: false
-    endpoint: "unix:///var/run/docker.sock"
     network: traefik_network
-  file:
-    filename: /etc/traefik./dynamic.yaml
-    watch: true
+  # file:
+  #   filename: /etc/traefik./dynamic.yaml
+  #   watch: true
 
 serversTransport:
   insecureSkipVerify: true
