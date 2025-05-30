@@ -34,8 +34,9 @@ services:
       # Let's Encrypt (HTTPS) configuration
       - --certificatesresolvers.myresolver.acme.email=asafeeson@outlook.com # REPLACE WITH YOUR EMAIL
       - --certificatesresolvers.myresolver.acme.storage=/etc/traefik/acme.json
-      - --certificatesresolvers.myresolver.acme.httpchallenge=true
-      - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web
+      # - --certificatesresolvers.myresolver.acme.httpchallenge=true
+      # - --certificatesresolvers.myresolver.acme.httpchallenge.entrypoint=web
+      - --certificatesresolvers.myresolver.acme.tlschallenge=true # <-- Вот это изменение!
 
       # Global redirect HTTP to HTTPS
       - --entrypoints.web.http.redirections.entrypoint.to=websecure
