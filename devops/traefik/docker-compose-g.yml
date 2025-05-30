@@ -15,6 +15,7 @@ services:
     environment:
       # This environment variable will be picked up from your .env file
       - TRAEFIK_HOST=${TRAEFIK_HOST}
+      - TRAEFIK_USER=${TRAEFIK_USER}
     command:
       # Entrypoints
       - --entrypoints.web.address=:80
@@ -60,7 +61,7 @@ services:
       # echo $(htpasswd -nb admin password123) | sed -e s/\\$/\\$\\$/g
       # This will output something like: admin:$apr1$.......
       # Use the entire output string as the value for basicauth.users.
-      - traefik.http.middlewares.traefik-dashboard-auth.basicauth.users=user:$$apr1$$XXXXXXXX$$YYYYYYYYYYYYY # REPLACE WITH YOUR HASHED USER:PASSWORD
+      - traefik.http.middlewares.traefik-dashboard-auth.basicauth.users=${TRAEFIK_USER} # REPLACE WITH YOUR HASHED USER:PASSWORD
       
 networks:
   default:
