@@ -5,36 +5,16 @@ services:
       service: traefik
     environment:
       TRAEFIK_HOST: ${TRAEFIK_HOST}
-      TRAEFIK_LOADBALANCER_PORT: ${TRAEFIK_LOADBALANCER_PORT}
     labels:
-      # Настройки HTTP для редиректа на HTTPS
-      - traefik.enable=true
-      - traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)
-      - traefik.http.services.traefik.loadbalancer.server.port=${TRAEFIK_LOADBALANCER_PORT}
-
+      - "traefik.enable=true"
+      - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)"
       - "traefik.http.routers.traefik.entrypoints=web"
-      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
-
-      # Middleware: traefik-https-redirect and redirect-to-https
-      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-
-      # Router: http-catchall
-      - "traefik.http.routers.http-catchall.rule=HostRegexp(`{host:.+}`)"
-      - "traefik.http.routers.http-catchall.middlewares=redirect-to-https"
-
-      # Настройки для HTTPS
       - "traefik.http.routers.traefik-secure.entrypoints=websecure"
       - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_HOST}`)"
-      - "traefik.http.services.traefik-secure.loadbalancer.server.port=${TRAEFIK_LOADBALANCER_PORT}"
-      # - "traefik.http.routers.traefik-secure.middlewares=cors,traefik-auth"
-      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
-
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
       - "traefik.http.routers.traefik-secure.service=api@internal"
-
-      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
     networks:
       - traefik_network
 
@@ -46,20 +26,13 @@ services:
       PORTAINER_HOST: ${PORTAINER_HOST}
       PORTAINER_LOADBALANCER_PORT: ${PORTAINER_LOADBALANCER_PORT}
     labels:
-      # activate traefik
       - "traefik.enable=true"
-      # routers entrypoints
-      - "traefik.http.routers.portainer.entrypoints=web"
-      # routers rules
       - "traefik.http.routers.portainer.rule=Host(`${PORTAINER_HOST}`)"
-      # middlewares
-      - "traefik.http.middlewares.portainer-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.routers.portainer.middlewares=portainer-https-redirect"
-      # tls and certificates
-      - "traefik.http.routers.portainer-secure.tls=true"
-      - "traefik.http.routers.portainer-secure.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.portainer.entrypoints=web"
       - "traefik.http.routers.portainer-secure.entrypoints=websecure"
       - "traefik.http.routers.portainer-secure.rule=Host(`${PORTAINER_HOST}`)"
+      - "traefik.http.routers.portainer-secure.tls=true"
+      - "traefik.http.routers.portainer-secure.tls.certresolver=tlschallenge"
       - "traefik.http.routers.portainer-secure.service=portainer"
       - "traefik.http.services.portainer.loadbalancer.server.port=${PORTAINER_LOADBALANCER_PORT}"
     networks:
@@ -74,22 +47,13 @@ services:
       STOREFRONT_LOADBALANCER_PORT: ${STOREFRONT_LOADBALANCER_PORT}
     labels:
       - "traefik.enable=true"
-      # routers entrypoints
+      - "traefik.http.routers.storefront.rule=Host(`${STOREFRONT_HOST}`)"
       - "traefik.http.routers.storefront.entrypoints=web"
       - "traefik.http.routers.storefront-secure.entrypoints=websecure"
-      # routers rules
-      - "traefik.http.routers.storefront.rule=Host(`${STOREFRONT_HOST}`)"
       - "traefik.http.routers.storefront-secure.rule=Host(`${STOREFRONT_HOST}`)"
-      # middlewares
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      # apply middlewares to routers
-      - "traefik.http.routers.storefront.middlewares=redirect-to-https"
-      # tls and certificates
       - "traefik.http.routers.storefront-secure.tls=true"
       - "traefik.http.routers.storefront-secure.tls.certresolver=tlschallenge"
-      # apply services to routers
       - "traefik.http.routers.storefront-secure.service=storefront"
-      # services
       - "traefik.http.services.storefront.loadbalancer.server.port=${STOREFRONT_LOADBALANCER_PORT}"
     networks:
       - traefik_network
@@ -107,22 +71,13 @@ services:
       - db
     labels:
       - "traefik.enable=true"
-      # routers entrypoints
+      - "traefik.http.routers.woocommerce.rule=Host(`${WOOCOMMERCE_HOST}`)"
       - "traefik.http.routers.woocommerce.entrypoints=web"
       - "traefik.http.routers.woocommerce-secure.entrypoints=websecure"
-      # routers rules
-      - "traefik.http.routers.woocommerce.rule=Host(`${WOOCOMMERCE_HOST}`)"
       - "traefik.http.routers.woocommerce-secure.rule=Host(`${WOOCOMMERCE_HOST}`)"
-      # middlewares
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
-      # apply middlewares to routers
-      - "traefik.http.routers.woocommerce.middlewares=redirect-to-https"
-      # tls and certificates
       - "traefik.http.routers.woocommerce-secure.tls=true"
       - "traefik.http.routers.woocommerce-secure.tls.certresolver=tlschallenge"
-      # apply services to routers
       - "traefik.http.routers.woocommerce-secure.service=woocommerce"
-      # services
       - "traefik.http.services.woocommerce.loadbalancer.server.port=${WOOCOMMERCE_LOADBALANCER_PORT}"
     networks:
       - traefik_network
