@@ -13,7 +13,7 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
-      WP_HOST: ${WP_URL}
+      WP_HOST: ${WP_HOST}
   wordpress:
     depends_on:
       - db
@@ -32,22 +32,24 @@ services:
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
     labels:
       # base setup
-      - traefik.enable=true
-      - traefik.http.routers.wp-secure.entrypoints=websecure
-      - traefik.http.routers.wp-secure.rule=HOST(`${WP_URL}`)
-      - traefik.http.routers.wp-secure.tsl=true
-      - traefik.http.routers.wp-secure.certresolver=tlschallenge
-      - traefik.http.services.wp-secure.loadbalancer.server.port=80
+      - "traefik.enable=true"
+      - "traefik.http.routers.wp.rule=Host(`${WP_HOST}`)"
+      - "traefik.http.routers.wp.entrypoints=web"
+      - "traefik.http.routers.wp-secure.entrypoints=websecure"
+      - "traefik.http.routers.wp-secure.rule=Host(`${WP_HOST}`)"
+      - "traefik.http.routers.wp-secure.tsl=true"
+      - "traefik.http.routers.wp-secure.certresolver=tlschallenge"
+      - "traefik.http.services.wp-secure.loadbalancer.server.port=80"
       # security
-      - traefik.http.middlewares.secure-headers.headers.customrequestheaders.X-Forwarded-Proto=https
-      - traefik.http.middlewares.secure-headers.headers.sslredirect=true
-      - traefik.http.middlewares.secure-headers.headers.stsseconds=31536000
-      - traefik.http.middlewares.secure-headers.headers.stsincludesubdomains=true
-      - traefik.http.middlewares.secure-headers.headers.stspreload=true
-      - traefik.http.middlewares.secure-headers.headers.frameDeny=true
-      - traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true
-      - traefik.http.middlewares.secure-headers.headers.browserXssFilter=true
-      - traefik.http.routers.wordpress.middlewares=secure-headers
+      - "traefik.http.middlewares.secure-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.middlewares.secure-headers.headers.sslredirect=true"
+      - "traefik.http.middlewares.secure-headers.headers.stsseconds=31536000"
+      - "traefik.http.middlewares.secure-headers.headers.stsincludesubdomains=true"
+      - "traefik.http.middlewares.secure-headers.headers.stspreload=true"
+      - "traefik.http.middlewares.secure-headers.headers.frameDeny=true"
+      - "traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true"
+      - "traefik.http.middlewares.secure-headers.headers.browserXssFilter=true"
+      - "traefik.http.routers.wordpress.middlewares=secure-headers"
     networks:
       - traefik_network
 

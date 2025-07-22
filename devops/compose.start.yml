@@ -71,13 +71,13 @@ services:
       - db
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.woocommerce.rule=Host(`${WOOCOMMERCE_HOST}`)"
-      - "traefik.http.routers.woocommerce.entrypoints=web"
-      - "traefik.http.routers.woocommerce-secure.entrypoints=websecure"
-      - "traefik.http.routers.woocommerce-secure.rule=Host(`${WOOCOMMERCE_HOST}`)"
-      - "traefik.http.routers.woocommerce-secure.tls=true"
-      - "traefik.http.routers.woocommerce-secure.tls.certresolver=tlschallenge"
-      - "traefik.http.routers.woocommerce-secure.service=woocommerce"
+      - "traefik.http.routers.wp.rule=Host(`${WOOCOMMERCE_HOST}`)"
+      - "traefik.http.routers.wp.entrypoints=web"
+      - "traefik.http.routers.wp-secure.entrypoints=websecure"
+      - "traefik.http.routers.wp-secure.rule=Host(`${WOOCOMMERCE_HOST}`)"
+      - "traefik.http.routers.wp-secure.tls=true"
+      - "traefik.http.routers.wp-secure.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.wp-secure.service=woocommerce"
       - "traefik.http.services.woocommerce.loadbalancer.server.port=${WOOCOMMERCE_LOADBALANCER_PORT}"
     networks:
       - traefik_network
