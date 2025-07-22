@@ -62,6 +62,8 @@ services:
     extends:
       file: "../woocommerce/docker-compose.yaml"
       service: db
+    networks:
+      - traefik_network
 
   woocommerce:
     extends:
