@@ -46,3 +46,9 @@ services:
       - traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true
       - traefik.http.middlewares.secure-headers.headers.browserXssFilter=true
       - traefik.http.routers.wordpress.middlewares=secure-headers
+    networks:
+      - traefik_network
+
+networks:
+  traefik_network:
+    external: true
