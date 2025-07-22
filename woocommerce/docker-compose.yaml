@@ -12,6 +12,7 @@ services:
       MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      WP_HOST: ${WP_URL}
   wordpress:
     depends_on:
       - db
@@ -27,3 +28,18 @@ services:
       WORDPRESS_DB_USER: ${WORDPRESS_DB_USER}
       WORDPRESS_DB_PASSWORD: ${WORDPRESS_DB_PASSWORD}
       WORDPRESS_DB_NAME: ${WORDPRESS_DB_NAME}
+    labels:
+      - traefik.enable=true
+      - traefik.http.routers.wp-secure.rule=HOST(`${WP_URL}`)
+      - traefik.http.routers.wp-secure.tsl=true
+      - traefik.http.routers.wp-secure.certresolver=tlschallenge
+      - traefik.http.services.wp-secure.loadbalancer.server.port=80
+      - traefik.http.middlewares.secure-headers.headers.customrequestheaders.X-Forwarded-Proto=https
+      - traefik.http.middlewares.secure-headers.headers.sslredirect=true
+      - traefik.http.middlewares.secure-headers.headers.stsseconds=31536000
+      - traefik.http.middlewares.secure-headers.headers.stsincludesubdomains=true
+      - traefik.http.middlewares.secure-headers.headers.stspreload=true
+      - traefik.http.middlewares.secure-headers.headers.frameDeny=true
+      - traefik.http.middlewares.secure-headers.headers.contentTypeNosniff=true
+      - traefik.http.middlewares.secure-headers.headers.browserXssFilter=true
+      - traefik.http.routers.wordpress.middlewares=secure-headers
