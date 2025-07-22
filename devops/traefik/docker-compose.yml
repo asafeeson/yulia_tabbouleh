@@ -14,6 +14,7 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./traefik.yaml:/etc/traefik/traefik.yaml:ro
       - ./certificates/acme.json:/etc/traefik/acme.json:rw
+      - ./logs:/var/log/traefik
     environment:
       TRAEFIK_HOST: ${TRAEFIK_HOST}
       TRAEFIK_LOADBALANCER_PORT: ${TRAEFIK_LOADBALANCER_PORT}
@@ -21,20 +22,20 @@ services:
       - "traefik.enable=true"
       
       # HTTP роутер для редиректа на HTTPS
-      - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)"
-      - "traefik.http.routers.traefik.entrypoints=web"
-      - "traefik.http.routers.traefik.middlewares=redirect-to-https"
+      - "traefik.http.routers.dashboard.rule=Host(`${TRAEFIK_HOST}`)"
+      - "traefik.http.routers.dashboard.entrypoints=web"
+      - "traefik.http.routers.dashboard.middlewares=redirect-to-https"
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
       # HTTPS роутер для безопасного соединения
-      - "traefik.http.routers.traefik-secure.entrypoints=websecure"
-      - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_HOST}`)"
-      - "traefik.http.routers.traefik-secure.service=api@internal"
-      - "traefik.http.routers.traefik-secure.tls=true"
-      - "traefik.http.routers.traefik-secure.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.dashboard-secure.entrypoints=websecure"
+      - "traefik.http.routers.dashboard-secure.rule=Host(`${TRAEFIK_HOST}`)"
+      - "traefik.http.routers.dashboard-secure.service=api@internal"
+      - "traefik.http.routers.dashboard-secure.tls=true"
+      - "traefik.http.routers.dashboard-secure.tls.certresolver=tlschallenge"
       
       # Защита от несанкционированных доступов на дашборд
-      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.dashboard-secure.middlewares=traefik-auth"
       
       # Дополнительные заголовки для безопасности
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
