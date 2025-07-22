@@ -28,13 +28,16 @@ services:
       # Middleware: редирект
       - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
+      # Настройки для HTTPS
+      - traefik.http.services.traefik-secure.loadbalancer.server.port=8080
+
       # HTTPS Traefik dashboard (через встроенный сервис)
       - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_HOST}`)"
       - "traefik.http.routers.traefik-secure.entrypoints=websecure"
       - "traefik.http.routers.traefik-secure.tls=true"
       - "traefik.http.routers.traefik-secure.tls.certresolver=tlschallenge"
       - "traefik.http.routers.traefik-secure.service=api@internal"
-      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
+      - "traefik.http.routers.traefik-secure.middlewares=cors,traefik-auth"
 
       # Безопасность: X-Forwarded-Proto
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
