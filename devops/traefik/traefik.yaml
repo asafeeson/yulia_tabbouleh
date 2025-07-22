@@ -32,8 +32,8 @@ serversTransport:
 certificatesResolvers:
   tlschallenge:
     acme:
-      # caServer: https://acme-staging-v02.api.letsencrypt.org/directory # IMPORTANT: comment out this line to get production ready certificates. After this, clear acme.json file.
-      email: foobar@example.invalid
+      caServer: https://acme-staging-v02.api.letsencrypt.org/directory # IMPORTANT: comment out this line to get production ready certificates. After this, clear acme.json file.
+      email: asafeeson@outlook.com
       storage: /etc/traefik/acme.json # chmod 600 this file on the host system / измените доступ к файлу chmod 600
       tlsChallenge: {}
 
@@ -42,6 +42,7 @@ log:
   filePath: "/var/log/traefik/traefik.log"
 accessLog:
   filePath: "/var/log/traefik/access.log"
+  format: "common"
 
 global:
   checkNewVersion: true
