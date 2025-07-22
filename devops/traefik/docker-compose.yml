@@ -16,34 +16,34 @@ services:
       - ./certificates/acme.json:/etc/traefik/acme.json:rw
       - ./logs:/var/log/traefik
     # user: root  # Только если у тебя проблемы с доступом к socket или логам
-    labels:
-      # Необязательно: Traefik сам себя не проксирует, но если хочешь дашборд через домен:
-      - "traefik.enable=true"
+    # labels:
+      # # Необязательно: Traefik сам себя не проксирует, но если хочешь дашборд через домен:
+      # - "traefik.enable=true"
 
-      # HTTP → HTTPS редирект
-      - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)"
-      - "traefik.http.routers.traefik.entrypoints=web"
-      - "traefik.http.routers.traefik.middlewares=redirect-to-https"
+      # # HTTP → HTTPS редирект
+      # - "traefik.http.routers.traefik.rule=Host(`${TRAEFIK_HOST}`)"
+      # - "traefik.http.routers.traefik.entrypoints=web"
+      # - "traefik.http.routers.traefik.middlewares=redirect-to-https"
 
       # Middleware: редирект
-      - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
+      # - "traefik.http.middlewares.redirect-to-https.redirectscheme.scheme=https"
 
       # Настройки для HTTPS
-      - traefik.http.services.traefik-secure.loadbalancer.server.port=8080
+      # - traefik.http.services.traefik-secure.loadbalancer.server.port=8080
 
       # HTTPS Traefik dashboard (через встроенный сервис)
-      - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_HOST}`)"
-      - "traefik.http.routers.traefik-secure.entrypoints=websecure"
-      - "traefik.http.routers.traefik-secure.tls=true"
-      - "traefik.http.routers.traefik-secure.tls.certresolver=tlschallenge"
-      - "traefik.http.routers.traefik-secure.service=api@internal"
-      - "traefik.http.routers.traefik-secure.middlewares=cors,traefik-auth"
+      # - "traefik.http.routers.traefik-secure.rule=Host(`${TRAEFIK_HOST}`)"
+      # - "traefik.http.routers.traefik-secure.entrypoints=websecure"
+      # - "traefik.http.routers.traefik-secure.tls=true"
+      # - "traefik.http.routers.traefik-secure.tls.certresolver=tlschallenge"
+      # - "traefik.http.routers.traefik-secure.service=api@internal"
+      # - "traefik.http.routers.traefik-secure.middlewares=cors,traefik-auth"
 
       # Безопасность: X-Forwarded-Proto
-      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      # - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
       
       # Basic Auth для панели управления
-      - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_USER}"
+      # - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_USER}"
 
     networks:
       - traefik_network
