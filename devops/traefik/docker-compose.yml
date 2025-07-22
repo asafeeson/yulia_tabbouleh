@@ -41,6 +41,9 @@ services:
 
       # Безопасность: X-Forwarded-Proto
       - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
+      
+      # Basic Auth для панели управления
+      - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_USER}"
 
     networks:
       - traefik_network
