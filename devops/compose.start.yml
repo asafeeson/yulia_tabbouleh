@@ -42,7 +42,7 @@ services:
 
   storefront:
     extends:
-      file: "../frontend/compose.storefront.yaml"
+      file: "../frontend/docker-compose.yaml"
       service: storefront
     environment:
       STOREFRONT_HOST: ${STOREFRONT_HOST}
