@@ -14,6 +14,15 @@ services:
       MYSQL_USER: ${MYSQL_USER}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       WP_HOST: ${WP_HOST}
+
+  redis:
+      image: 'redis:alpine'
+      restart: always
+      networks:
+        - traefik_network
+      volumes:
+        - ./redis_data:/data
+
   wordpress:
     depends_on:
       - db
