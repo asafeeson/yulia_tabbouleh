@@ -3,7 +3,12 @@ FROM wordpress:latest
 
 # Устанавливаем необходимые пакеты
 RUN apt-get update && apt-get install -y \
-    unzip \
+    libzstd-dev zlib1g-dev unzip build-essential \
+    && pecl install redis \
+    && echo "extension=redis.so" > /usr/local/etc/php/conf.d/redis.ini \
+    && docker-php-ext-enable redis \
+    && apt-get remove -y build-essential \
+    && apt-get autoremove -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Устанавливаем WP-CLI
