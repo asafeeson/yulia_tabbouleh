@@ -2,9 +2,9 @@
 
 # comment this in production
 api:
-  dashboard: true # set to false in production
-  insecure: true # set to false in production
-  debug: true # set to false in production
+  dashboard: true 
+  insecure: false 
+  debug: false
 
 entryPoints:
   web:
