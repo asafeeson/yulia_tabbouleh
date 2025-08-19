@@ -49,6 +49,7 @@ services:
 
   openlitespeed:
     image: litespeedtech/openlitespeed:latest
+    container_name: openlitespeed
     volumes:
       - ./wordpress:/var/www/vhosts/yuliatabbouleh.ru/html
 
