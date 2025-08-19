@@ -95,6 +95,22 @@ services:
     networks:
       - traefik_network
 
+  openlitespeed:
+    extends:
+      file: "../woocommerce/docker-compose.yaml"
+      service: openlitespeed
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ols.rule=Host(`${WOOCOMMERCE_HOST}`"
+      - "traefik.http.routers.ols.entrypoints=web"
+      - "traefik.http.routers.ols.entrypoints=websecure"
+      - "traefik.http.routers.ols.tls=true"
+      - "traefik.http.routers.ols.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.ols.service=openlitespeed"
+      - "traefik.http.services.ols.loadbalancer.server.port=8088"
+    networks:
+      - traefik_network
+
 volumes:
   portainer_data:
   redis_data:

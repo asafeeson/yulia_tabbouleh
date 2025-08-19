@@ -55,17 +55,7 @@ services:
       - "8088:8088" 
     volumes:
       - ./wordpress:/var/www/vhosts/yuliatabbouleh.com/html
-    networks:
-      - traefik_network
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.ols.rule=Host(`yuliatabbouleh.ru`)"
-      - "traefik.http.routers.ols.entrypoints=web"
-      - "traefik.http.routers.ols.entrypoints=websecure"
-      - "traefik.http.routers.ols.tls=true"
-      - "traefik.http.routers.ols.tls.certresolver=tlschallenge"
-      - "traefik.http.routers.ols.service=openlitespeed"
-      - "traefik.http.services.ols.loadbalancer.server.port=8088"
+
 
 networks:
   traefik_network:
