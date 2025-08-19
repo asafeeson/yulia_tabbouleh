@@ -82,16 +82,16 @@ services:
       service: wordpress
     depends_on:
       - db
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.wp.rule=Host(`${WOOCOMMERCE_HOST}`)"
-      - "traefik.http.routers.wp.entrypoints=web"
-      - "traefik.http.routers.wp-secure.entrypoints=websecure"
-      - "traefik.http.routers.wp-secure.rule=Host(`${WOOCOMMERCE_HOST}`)"
-      - "traefik.http.routers.wp-secure.tls=true"
-      - "traefik.http.routers.wp-secure.tls.certresolver=tlschallenge"
-      - "traefik.http.routers.wp-secure.service=woocommerce"
-      - "traefik.http.services.woocommerce.loadbalancer.server.port=${WOOCOMMERCE_LOADBALANCER_PORT}"
+    # labels:
+    #   - "traefik.enable=true"
+    #   - "traefik.http.routers.wp.rule=Host(`${WOOCOMMERCE_HOST}`)"
+    #   - "traefik.http.routers.wp.entrypoints=web"
+    #   - "traefik.http.routers.wp-secure.entrypoints=websecure"
+    #   - "traefik.http.routers.wp-secure.rule=Host(`${WOOCOMMERCE_HOST}`)"
+    #   - "traefik.http.routers.wp-secure.tls=true"
+    #   - "traefik.http.routers.wp-secure.tls.certresolver=tlschallenge"
+    #   - "traefik.http.routers.wp-secure.service=woocommerce"
+    #   - "traefik.http.services.woocommerce.loadbalancer.server.port=${WOOCOMMERCE_LOADBALANCER_PORT}"
     networks:
       - traefik_network
 
@@ -99,11 +99,9 @@ services:
     extends:
       file: "../woocommerce/docker-compose.yaml"
       service: openlitespeed
-    ports:
-      - "8088:8088" 
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.ols.rule=Host(`${WOOCOMMERCE_HOST}`"
+      - "traefik.http.routers.ols.rule=Host(`${WOOCOMMERCE_HOST}`)"
       - "traefik.http.routers.ols.entrypoints=web"
       - "traefik.http.routers.ols.entrypoints=websecure"
       - "traefik.http.routers.ols.tls=true"
