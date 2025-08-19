@@ -65,3 +65,7 @@ woocommerce.log
 .env
 .env.*
 !.env.example
+
+
+# certificats file
+acme.json

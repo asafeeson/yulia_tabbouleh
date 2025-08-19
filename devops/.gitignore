@@ -189,3 +189,5 @@ only_ocr_data.txt
 *.acl
 nginx_proxy_manager/data/database.sqlite
 nginx_proxy_manager/data/keys.json
+
+acme.json
