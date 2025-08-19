@@ -67,6 +67,14 @@ services:
     networks:
       - traefik_network
 
+  redis:
+    image: "redis:alpine"
+    restart: always
+    networks:
+      - traefik_network
+    volumes:
+      - ./redis_data:/data
+
   woocommerce:
     extends:
       file: "../woocommerce/docker-compose.yaml"
