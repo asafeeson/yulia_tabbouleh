@@ -106,7 +106,7 @@ services:
       - "traefik.http.routers.ols.entrypoints=websecure"
       - "traefik.http.routers.ols.tls=true"
       - "traefik.http.routers.ols.tls.certresolver=tlschallenge"
-      - "traefik.http.routers.ols.service=openlitespeed"
+      - "traefik.http.routers.ols.service=ols"
       - "traefik.http.services.ols.loadbalancer.server.port=8088"
     networks:
       - traefik_network

@@ -50,6 +50,7 @@ services:
   openlitespeed:
     image: litespeedtech/openlitespeed:latest
     container_name: openlitespeed
+    restart: always
     volumes:
       - ./wordpress:/var/www/vhosts/yuliatabbouleh.ru/html
 
