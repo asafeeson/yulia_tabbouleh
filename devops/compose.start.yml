@@ -108,6 +108,13 @@ services:
       - "traefik.http.routers.ols.tls.certresolver=tlschallenge"
       - "traefik.http.routers.ols.service=ols"
       - "traefik.http.services.ols.loadbalancer.server.port=8088"
+
+      - "traefik.http.routers.ols-admin.rule=Host(`backend.yuliatabbouleh.ru`)"
+      - "traefik.http.routers.ols-admin.entrypoints=websecure"
+      - "traefik.http.routers.ols-admin.tls=true"
+      - "traefik.http.routers.ols-admin.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.ols-admin.service=ols-admin"
+      - "traefik.http.services.ols-admin.loadbalancer.server.port=7080"
     networks:
       - traefik_network
 
