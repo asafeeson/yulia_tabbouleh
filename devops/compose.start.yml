@@ -99,6 +99,8 @@ services:
     extends:
       file: "../woocommerce/docker-compose.yaml"
       service: openlitespeed
+    ports:
+      - "8088:8088" 
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.ols.rule=Host(`${WOOCOMMERCE_HOST}`"

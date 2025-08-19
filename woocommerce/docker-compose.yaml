@@ -49,12 +49,8 @@ services:
 
   openlitespeed:
     image: litespeedtech/openlitespeed:latest
-    ports:
-      - "80:80"
-      - "443:443"
-      - "8088:8088" 
     volumes:
-      - ./wordpress:/var/www/vhosts/yuliatabbouleh.com/html
+      - ./wordpress:/var/www/vhosts/yuliatabbouleh.ru/html
 
 
 networks:
