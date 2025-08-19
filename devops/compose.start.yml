@@ -40,25 +40,25 @@ services:
     networks:
       - traefik_network
 
-  storefront:
-    extends:
-      file: "../frontend/docker-compose.yaml"
-      service: storefront
-    environment:
-      STOREFRONT_HOST: ${STOREFRONT_HOST}
-      STOREFRONT_LOADBALANCER_PORT: ${STOREFRONT_LOADBALANCER_PORT}
-    labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.storefront.rule=Host(`${STOREFRONT_HOST}`)"
-      - "traefik.http.routers.storefront.entrypoints=web"
-      - "traefik.http.routers.storefront-secure.entrypoints=websecure"
-      - "traefik.http.routers.storefront-secure.rule=Host(`${STOREFRONT_HOST}`)"
-      - "traefik.http.routers.storefront-secure.tls=true"
-      - "traefik.http.routers.storefront-secure.tls.certresolver=tlschallenge"
-      - "traefik.http.routers.storefront-secure.service=storefront"
-      - "traefik.http.services.storefront.loadbalancer.server.port=${STOREFRONT_LOADBALANCER_PORT}"
-    networks:
-      - traefik_network
+  # storefront:
+  #   extends:
+  #     file: "../frontend/docker-compose.yaml"
+  #     service: storefront
+  #   environment:
+  #     STOREFRONT_HOST: ${STOREFRONT_HOST}
+  #     STOREFRONT_LOADBALANCER_PORT: ${STOREFRONT_LOADBALANCER_PORT}
+  #   labels:
+  #     - "traefik.enable=true"
+  #     - "traefik.http.routers.storefront.rule=Host(`${STOREFRONT_HOST}`)"
+  #     - "traefik.http.routers.storefront.entrypoints=web"
+  #     - "traefik.http.routers.storefront-secure.entrypoints=websecure"
+  #     - "traefik.http.routers.storefront-secure.rule=Host(`${STOREFRONT_HOST}`)"
+  #     - "traefik.http.routers.storefront-secure.tls=true"
+  #     - "traefik.http.routers.storefront-secure.tls.certresolver=tlschallenge"
+  #     - "traefik.http.routers.storefront-secure.service=storefront"
+  #     - "traefik.http.services.storefront.loadbalancer.server.port=${STOREFRONT_LOADBALANCER_PORT}"
+  #   networks:
+  #     - traefik_network
 
   db:
     extends:
