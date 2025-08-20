@@ -53,7 +53,7 @@ services:
     restart: always
     volumes:
       - ./wordpress:/var/www/vhosts/yuliatabbouleh.ru/html
-
+      - ./ols/hosts/yuliatabbouleh.ru:/usr/local/lsws/conf/vhosts/yuliatabbouleh.ru
 
 networks:
   traefik_network:
