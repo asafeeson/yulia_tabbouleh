@@ -114,6 +114,8 @@ services:
       - "traefik.http.routers.ols-admin.tls.certresolver=tlschallenge"
       - "traefik.http.routers.ols-admin.service=ols-admin"
       - "traefik.http.services.ols-admin.loadbalancer.server.port=7080"
+      - "traefik.http.middlewares.ols-admin-headers.headers.customrequestheaders.X-Forwarded-Proto=https"
+      - "traefik.http.routers.ols-admin.middlewares=ols-admin-headers"
     networks:
       - traefik_network
 
