@@ -95,28 +95,27 @@ services:
     networks:
       - traefik_network
 
-  # openlitespeed:
-  #   extends:
-  #     file: "../woocommerce/docker-compose.yaml"
-  #     service: openlitespeed
-  #   labels:
-  #     - "traefik.enable=true"
-  #     - "traefik.http.routers.ols.rule=Host(`${WOOCOMMERCE_HOST}`)"
-  #     - "traefik.http.routers.ols.entrypoints=web"
-  #     - "traefik.http.routers.ols.entrypoints=websecure"
-  #     - "traefik.http.routers.ols.tls=true"
-  #     - "traefik.http.routers.ols.tls.certresolver=tlschallenge"
-  #     - "traefik.http.routers.ols.service=ols"
-  #     - "traefik.http.services.ols.loadbalancer.server.port=7080"
+  openlitespeed:
+    extends:
+      file: "../woocommerce/docker-compose.yaml"
+      service: openlitespeed
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.ols.rule=Host(`${DEMO_HOST}`)"
+      - "traefik.http.routers.ols.entrypoints=web,websecure"
+      - "traefik.http.routers.ols.tls=true"
+      - "traefik.http.routers.ols.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.ols.service=ols"
+      - "traefik.http.services.ols.loadbalancer.server.port=8088"
 
-  #     # - "traefik.http.routers.ols-admin.rule=Host(`backend.yuliatabbouleh.ru`)"
-  #     # - "traefik.http.routers.ols-admin.entrypoints=websecure"
-  #     # - "traefik.http.routers.ols-admin.tls=true"
-  #     # - "traefik.http.routers.ols-admin.tls.certresolver=tlschallenge"
-  #     # - "traefik.http.routers.ols-admin.service=ols-admin"
-  #     # - "traefik.http.services.ols-admin.loadbalancer.server.port=7080"
-  #   networks:
-  #     - traefik_network
+      - "traefik.http.routers.ols-admin.rule=Host(`${OLS_HOST}`)"
+      - "traefik.http.routers.ols-admin.entrypoints=web,websecure"
+      - "traefik.http.routers.ols-admin.tls=true"
+      - "traefik.http.routers.ols-admin.tls.certresolver=tlschallenge"
+      - "traefik.http.routers.ols-admin.service=ols-admin"
+      - "traefik.http.services.ols-admin.loadbalancer.server.port=7080"
+    networks:
+      - traefik_network
 
 volumes:
   portainer_data:
