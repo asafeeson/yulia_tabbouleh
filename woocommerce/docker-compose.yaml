@@ -52,8 +52,9 @@ services:
     container_name: openlitespeed
     restart: always
     volumes:
-      - ./wordpress:/var/www/vhosts/yuliatabbouleh.ru/html
-      - ./ols/hosts/yuliatabbouleh.ru:/usr/local/lsws/conf/vhosts/yuliatabbouleh.ru
+      - ./wordpress:/var/www/vhosts/yuliatabbouleh.ru/html:rw
+      - ./ols/hosts:/usr/local/lsws/conf/vhosts:rw
+      - ./ols/admin:/usr/local/lsws/admin/conf:rw
 
 networks:
   traefik_network:
